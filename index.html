@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EsporGO | Takım Arkadaşı Bul, Takım Kur, Turnuvaya Gir</title>
+  <meta name="description" content="EsporGO, Valorant, CS2, Point Blank, FiveM, LoL ve diğer oyunlar için takım arkadaşı bulma, takım kurma ve turnuva ilan platformu." />
+  <meta name="theme-color" content="#0a0f1f" />
+  <meta property="og:title" content="EsporGO | E-spor Takım Arkadaşı Bulma Platformu" />
+  <meta property="og:description" content="Oyuncu profilini oluştur, takım arkadaşı bul, takımını kur ve turnuva akışına katıl." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="site-bg" aria-hidden="true"></div>
+
+  <header class="topbar" id="top">
+    <a class="brand" href="#top" aria-label="EsporGO ana sayfa">
+      <span class="brand-mark">GO</span>
+      <span>
+        <strong>EsporGO</strong>
+        <small>Takımını bul, oyuna gir.</small>
+      </span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-label="Menüyü aç/kapat" data-menu-toggle>☰</button>
+    <nav class="nav" data-nav>
+      <a href="#oyuncu-bul">Oyuncu Bul</a>
+      <a href="#takimlar">Takımlar</a>
+      <a href="#turnuvalar">Turnuvalar</a>
+      <a href="#ilan-olustur">İlan Oluştur</a>
+      <a href="#panel">Panel</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-pad">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Türkiye odaklı ücretsiz e-spor MVP</p>
+        <h1>Her oyundan oyuncular burada takım arkadaşını bulur.</h1>
+        <p class="hero-text">
+          EsporGO; Valorant, CS2, Point Blank, FiveM, LoL ve diğer rekabetçi oyunlarda
+          oyuncuların profil oluşturduğu, takım ilanı açtığı ve turnuvaları takip ettiği modern bir platformdur.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#ilan-olustur">Ücretsiz İlan Oluştur</a>
+          <a class="btn ghost" href="#oyuncu-bul">Oyuncuları Keşfet</a>
+        </div>
+        <div class="trust-row" aria-label="Platform özellikleri">
+          <span>⚡ Hızlı MVP</span>
+          <span>🔒 Güvenli profil mantığı</span>
+          <span>🎮 Çok oyunlu yapı</span>
+        </div>
+      </div>
+
+      <aside class="hero-card reveal delay-1" aria-label="Canlı eşleşme kartı">
+        <div class="pulse-line"></div>
+        <div class="hero-card-head">
+          <span class="live-dot"></span>
+          <span>Canlı Eşleşme</span>
+        </div>
+        <h2>Takım Arıyor</h2>
+        <div class="match-card">
+          <div>
+            <strong>Raven17</strong>
+            <small>Valorant • Duelist • TR</small>
+          </div>
+          <span class="rank">Immortal</span>
+        </div>
+        <div class="match-card soft">
+          <div>
+            <strong>EIGHT7 Scout</strong>
+            <small>Point Blank • Rifle • Mikrofon var</small>
+          </div>
+          <span class="rank">Pro</span>
+        </div>
+        <div class="score-box">
+          <span>Eşleşme Skoru</span>
+          <strong id="heroScore">97%</strong>
+        </div>
+      </aside>
+    </section>
+
+    <section class="stats-grid section-narrow reveal" aria-label="EsporGO istatistikleri">
+      <div class="stat-card"><strong id="statPlayers">0</strong><span>Oyuncu Profili</span></div>
+      <div class="stat-card"><strong id="statTeams">0</strong><span>Aktif Takım</span></div>
+      <div class="stat-card"><strong>12</strong><span>Desteklenen Oyun</span></div>
+      <div class="stat-card"><strong>24/7</strong><span>İlan Görünürlüğü</span></div>
+    </section>
+
+    <section class="section-pad split" id="analiz">
+      <div class="section-title reveal">
+        <p class="eyebrow">Detaylı ürün mantığı</p>
+        <h2>EsporGO’nun ilk hedefi net: oyuncuyu takıma, takımı turnuvaya bağlamak.</h2>
+      </div>
+      <div class="analysis-grid reveal delay-1">
+        <article>
+          <span class="icon">01</span>
+          <h3>Oyuncu Profili</h3>
+          <p>Oyun, rol, rank, aktif saat, mikrofon, şehir ve iletişim bilgisiyle doğru eşleşme yapılır.</p>
+        </article>
+        <article>
+          <span class="icon">02</span>
+          <h3>Takım İlanı</h3>
+          <p>Takımlar eksik rollerini paylaşır; oyuncular oyun ve seviye filtresiyle başvuru yapar.</p>
+        </article>
+        <article>
+          <span class="icon">03</span>
+          <h3>Turnuva Akışı</h3>
+          <p>Yaklaşan turnuvalar, hakem ihtiyacı, ödül havuzu ve kayıt durumu tek panelde listelenir.</p>
+        </article>
+        <article>
+          <span class="icon">04</span>
+          <h3>Büyüme Modeli</h3>
+          <p>Başlangıç ücretsiz; büyüdükçe sponsor duyuruları, premium takım profili ve reklam alanları eklenir.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-pad" id="oyuncu-bul">
+      <div class="section-title reveal">
+        <p class="eyebrow">Oyuncu bul</p>
+        <h2>Filtrele, incele, takımına uygun kişiyi seç.</h2>
+      </div>
+
+      <div class="tool-panel reveal delay-1">
+        <label>
+          Oyun
+          <select id="gameFilter">
+            <option value="all">Tüm Oyunlar</option>
+          </select>
+        </label>
+        <label>
+          Rol
+          <select id="roleFilter">
+            <option value="all">Tüm Roller</option>
+          </select>
+        </label>
+        <label>
+          Arama
+          <input id="searchInput" type="search" placeholder="Oyuncu adı, şehir, rank..." />
+        </label>
+        <button class="btn small" type="button" id="resetFilters">Temizle</button>
+      </div>
+
+      <div class="card-grid" id="playerGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="section-pad" id="takimlar">
+      <div class="section-title reveal">
+        <p class="eyebrow">Takımlar</p>
+        <h2>Eksik rolünü duyur, kadronu tamamla.</h2>
+      </div>
+      <div class="team-board reveal delay-1" id="teamBoard"></div>
+    </section>
+
+    <section class="section-pad tournaments" id="turnuvalar">
+      <div class="section-title reveal">
+        <p class="eyebrow">Turnuva merkezi</p>
+        <h2>Yaklaşan etkinlikleri takip et.</h2>
+      </div>
+      <div class="timeline reveal delay-1" id="tournamentList"></div>
+    </section>
+
+    <section class="section-pad form-section" id="ilan-olustur">
+      <div class="section-title reveal">
+        <p class="eyebrow">İlan oluştur</p>
+        <h2>Profilini veya takımını siteye ekle.</h2>
+        <p>Bu sürümde veriler tarayıcı hafızasına kaydedilir. Gerçek çok kullanıcılı sistem için Firebase/Supabase bağlantısı eklenir.</p>
+      </div>
+
+      <div class="forms-wrap reveal delay-1">
+        <form class="smart-form" id="playerForm">
+          <h3>Oyuncu Profili</h3>
+          <div class="form-grid">
+            <label>Oyuncu adı<input name="name" required placeholder="Örn: EmreGO" /></label>
+            <label>Oyun<select name="game" required></select></label>
+            <label>Rol<input name="role" required placeholder="Örn: Duelist / Rifle / Support" /></label>
+            <label>Rank<input name="rank" required placeholder="Örn: Diamond / Pro / Gold" /></label>
+            <label>Şehir<input name="city" placeholder="Örn: Çanakkale" /></label>
+            <label>Aktif saat<input name="time" placeholder="Örn: 20:00 - 01:00" /></label>
+            <label class="wide">İletişim<input name="contact" placeholder="Discord, Instagram veya e-posta" /></label>
+            <label class="wide">Kısa açıklama<textarea name="bio" rows="4" placeholder="Oyun tarzın, hedefin, aradığın takım..."></textarea></label>
+          </div>
+          <button class="btn primary" type="submit">Oyuncu İlanını Yayınla</button>
+        </form>
+
+        <form class="smart-form" id="teamForm">
+          <h3>Takım İlanı</h3>
+          <div class="form-grid">
+            <label>Takım adı<input name="team" required placeholder="Örn: EsporGO Elite" /></label>
+            <label>Oyun<select name="game" required></select></label>
+            <label>Aranan rol<input name="need" required placeholder="Örn: IGL / Sniper / Support" /></label>
+            <label>Seviye<input name="level" required placeholder="Örn: Orta / Yüksek / Pro" /></label>
+            <label class="wide">Açıklama<textarea name="desc" rows="4" placeholder="Takım hedefi, antrenman saati, başvuru şartları..."></textarea></label>
+          </div>
+          <button class="btn primary" type="submit">Takım İlanını Yayınla</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section-pad panel" id="panel">
+      <div class="section-title reveal">
+        <p class="eyebrow">Yönetim paneli demo</p>
+        <h2>Başlangıç kontrol merkezi.</h2>
+        <p>Bu panel gerçek şifre güvenliği sağlamaz; sadece ilk tasarım/prototip görünümüdür.</p>
+      </div>
+      <div class="panel-card reveal delay-1">
+        <div class="panel-header">
+          <div>
+            <strong>EsporGO Admin</strong>
+            <span>Demo kod: <b>esporgo2026</b></span>
+          </div>
+          <span class="status-pill">MVP</span>
+        </div>
+        <div class="admin-login" id="adminLogin">
+          <input id="adminCode" type="password" placeholder="Demo kodu gir" />
+          <button class="btn small" id="adminBtn" type="button">Panele Gir</button>
+        </div>
+        <div class="admin-content hidden" id="adminContent">
+          <div class="admin-grid">
+            <div><strong id="adminPlayers">0</strong><span>Kayıtlı Oyuncu</span></div>
+            <div><strong id="adminTeams">0</strong><span>Kayıtlı Takım</span></div>
+            <div><strong id="adminGames">0</strong><span>Aktif Oyun</span></div>
+          </div>
+          <button class="danger" id="clearLocal" type="button">Demo Verilerini Sıfırla</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad roadmap" id="yol-haritasi">
+      <div class="section-title reveal">
+        <p class="eyebrow">Geliştirme yol haritası</p>
+        <h2>Ücretsiz MVP’den gerçek platforma geçiş.</h2>
+      </div>
+      <div class="roadmap-grid reveal delay-1">
+        <article><span>1</span><h3>Statik Yayın</h3><p>GitHub Pages veya Cloudflare Pages üzerinde ücretsiz yayın.</p></article>
+        <article><span>2</span><h3>Gerçek Üyelik</h3><p>Firebase Auth veya Supabase Auth ile kullanıcı hesapları.</p></article>
+        <article><span>3</span><h3>Veritabanı</h3><p>Oyuncu, takım, başvuru ve turnuva tabloları.</p></article>
+        <article><span>4</span><h3>Gelir Modeli</h3><p>Sponsor banner, premium takım profili ve turnuva ilanları.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <strong>EsporGO</strong>
+      <p>Oyuncular için takım bulma ve e-spor organizasyon platformu.</p>
+    </div>
+    <a class="back-top" href="#top">Yukarı çık ↑</a>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="assets/app.js"></script>
+</body>
+</html>
