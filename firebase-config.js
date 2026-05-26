@@ -1,11 +1,9 @@
-// EsporGO Firebase bağlantı dosyası
-// Firebase Console > Project settings > Your apps > Web app bölümünden aldığın config'i buraya yapıştır.
-// Bu dosya doldurulmadan kayıt/giriş veritabanına bağlanmaz.
 export const firebaseConfig = {
-  apiKey: "BURAYA_FIREBASE_API_KEY",
-  authDomain: "BURAYA_PROJECT_ID.firebaseapp.com",
-  projectId: "BURAYA_PROJECT_ID",
-  storageBucket: "BURAYA_PROJECT_ID.appspot.com",
-  messagingSenderId: "BURAYA_MESSAGING_SENDER_ID",
-  appId: "BURAYA_APP_ID"
+  apiKey: "AIzaSyCBkNIITo6mKBLg1cHmKOBx7SefQ7hjnkM",
+  authDomain: "esporgo.firebaseapp.com",
+  projectId: "esporgo",
+  storageBucket: "esporgo.firebasestorage.app",
+  messagingSenderId: "55792344925",
+  appId: "1:55792344925:web:b78cf80e6da890d80ed2b4",
+  measurementId: "G-FXQGL5JEPC"
 };
