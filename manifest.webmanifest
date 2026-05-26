@@ -1,9 +1,0 @@
-{
-  "name": "EsporGO",
-  "short_name": "EsporGO",
-  "start_url": "./index.html",
-  "display": "standalone",
-  "background_color": "#0a0f1f",
-  "theme_color": "#0a0f1f",
-  "description": "E-spor takım arkadaşı bulma platformu"
-}
