@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EsporGO | Gerçek Oyuncu, Takım ve Turnuva Platformu</title>
+  <meta name="description" content="EsporGO; Türkiye odaklı oyuncu profili, takım ilanı ve turnuva eşleştirme platformudur." />
+  <meta name="theme-color" content="#050814" />
+  <style>
+:root{
+  --bg:#050814;--bg2:#07111f;--panel:rgba(13,22,42,.78);--panel2:rgba(21,34,63,.72);--line:rgba(139,171,255,.19);--text:#edf3ff;--muted:#93a4c6;--soft:#c5d2ee;--primary:#6c5cff;--primary2:#00e1ff;--danger:#ff4d7d;--success:#37f5a2;--warn:#ffd166;--shadow:0 30px 80px rgba(0,0,0,.45);--radius:24px;--radius2:16px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:radial-gradient(circle at top left,rgba(108,92,255,.25),transparent 34%),radial-gradient(circle at 80% 10%,rgba(0,225,255,.17),transparent 28%),linear-gradient(180deg,var(--bg),#03050b 80%);color:var(--text);min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:58px 58px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.9),transparent 80%);pointer-events:none;z-index:-1}.noise{position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");z-index:-1}
+a{color:inherit;text-decoration:none}.container{width:min(1180px,calc(100% - 32px));margin:auto}.topbar{position:sticky;top:0;z-index:40;background:rgba(5,8,20,.74);backdrop-filter:blur(22px);border-bottom:1px solid var(--line)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.2px}.logo{width:42px;height:42px;border-radius:14px;background:conic-gradient(from 180deg,var(--primary),var(--primary2),var(--success),var(--primary));box-shadow:0 0 36px rgba(0,225,255,.28);position:relative}.logo:after{content:"GO";position:absolute;inset:3px;border-radius:12px;background:#061023;display:grid;place-items:center;font-size:12px;color:#fff;font-weight:950}.navlinks{display:flex;gap:18px;align-items:center;color:var(--muted);font-size:14px}.navlinks a:hover{color:var(--text)}.actions{display:flex;gap:10px;align-items:center}.btn{border:0;border-radius:15px;padding:12px 16px;font-weight:800;color:var(--text);background:rgba(255,255,255,.08);border:1px solid var(--line);cursor:pointer;transition:.2s transform,.2s background,.2s border-color;display:inline-flex;gap:8px;align-items:center;justify-content:center}.btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25)}.btn.primary{background:linear-gradient(135deg,var(--primary),#8d4dff 50%,var(--primary2));border:0;box-shadow:0 16px 40px rgba(108,92,255,.33)}.btn.success{background:rgba(55,245,162,.12);border-color:rgba(55,245,162,.35);color:#caffeb}.btn.danger{background:rgba(255,77,125,.1);border-color:rgba(255,77,125,.35);color:#ffd7e1}.small{padding:9px 12px;border-radius:12px;font-size:13px}.hamb{display:none}.hero{padding:76px 0 38px}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}.badge{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;background:rgba(0,225,255,.08);border:1px solid rgba(0,225,255,.18);color:#bff7ff;font-weight:800;font-size:13px;margin-bottom:18px}.h1{font-size:clamp(42px,7vw,82px);line-height:.94;margin:0 0 18px;letter-spacing:-3px}.grad{background:linear-gradient(90deg,#fff,var(--primary2),#bfa7ff);-webkit-background-clip:text;background-clip:text;color:transparent}.lead{color:var(--soft);font-size:18px;line-height:1.65;max-width:720px}.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}.metric{background:rgba(255,255,255,.055);border:1px solid var(--line);border-radius:18px;padding:16px}.metric b{display:block;font-size:24px}.metric span{color:var(--muted);font-size:13px}.visual{position:relative;border:1px solid var(--line);border-radius:32px;background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.03));box-shadow:var(--shadow);padding:18px;overflow:hidden}.visual:before{content:"";position:absolute;inset:-120px;background:conic-gradient(from 20deg,transparent,rgba(0,225,255,.18),transparent,rgba(108,92,255,.25),transparent);animation:spin 10s linear infinite}.visual>*{position:relative}@keyframes spin{to{transform:rotate(360deg)}}.terminal{background:rgba(2,6,18,.82);border:1px solid rgba(255,255,255,.12);border-radius:22px;overflow:hidden}.terminal-top{height:46px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:0 14px;color:var(--muted);font-size:13px}.dots{display:flex;gap:7px}.dots i{width:10px;height:10px;border-radius:50%;display:block;background:#ff5f57}.dots i:nth-child(2){background:#ffbd2e}.dots i:nth-child(3){background:#28c840}.match-card{padding:18px;border-bottom:1px solid rgba(255,255,255,.07)}.match-card:last-child{border-bottom:0}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.tag{padding:6px 9px;border-radius:999px;background:rgba(108,92,255,.13);border:1px solid rgba(108,92,255,.24);color:#d8d3ff;font-size:12px;font-weight:800}.tag.cyan{background:rgba(0,225,255,.1);border-color:rgba(0,225,255,.25);color:#bff7ff}.tag.green{background:rgba(55,245,162,.11);border-color:rgba(55,245,162,.27);color:#caffeb}.tag.red{background:rgba(255,77,125,.1);border-color:rgba(255,77,125,.27);color:#ffd8e2}.section{padding:34px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:16px}.kicker{color:var(--primary2);font-weight:950;font-size:13px;letter-spacing:.16em;text-transform:uppercase}.title{font-size:clamp(26px,4vw,46px);line-height:1;margin:8px 0 0;letter-spacing:-1.6px}.sub{color:var(--muted);line-height:1.6}.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);backdrop-filter:blur(22px)}.panel.pad{padding:20px}.grid{display:grid;gap:16px}.grid.two{grid-template-columns:repeat(2,1fr)}.grid.three{grid-template-columns:repeat(3,1fr)}.filters{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr .8fr;gap:10px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-size:12px;color:var(--muted);font-weight:800}.input,select,textarea{width:100%;padding:13px 13px;border-radius:14px;background:rgba(5,10,25,.86);border:1px solid rgba(139,171,255,.2);color:var(--text);outline:none;font:inherit}.input:focus,select:focus,textarea:focus{border-color:rgba(0,225,255,.55);box-shadow:0 0 0 4px rgba(0,225,255,.08)}textarea{min-height:104px;resize:vertical}.players{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}.card{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.035));border:1px solid var(--line);border-radius:22px;padding:17px;position:relative;overflow:hidden}.card:before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--primary2),var(--success));opacity:.75}.avatar{width:46px;height:46px;border-radius:16px;background:linear-gradient(135deg,var(--primary),var(--primary2));display:grid;place-items:center;font-weight:950}.card h3{margin:0;font-size:18px}.muted{color:var(--muted)}.card-meta{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0}.divider{height:1px;background:var(--line);margin:14px 0}.empty{padding:34px;text-align:center;color:var(--muted);border:1px dashed rgba(139,171,255,.25);border-radius:22px;background:rgba(255,255,255,.035)}.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.span2{grid-column:span 2}.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(15px);z-index:90;display:none;align-items:center;justify-content:center;padding:18px}.modal.open{display:flex}.modal-card{width:min(860px,100%);max-height:91vh;overflow:auto;background:#071020;border:1px solid var(--line);border-radius:26px;box-shadow:0 40px 90px rgba(0,0,0,.55)}.modal-head{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(7,16,32,.92);backdrop-filter:blur(20px);z-index:2}.tabs{display:flex;gap:8px;padding:16px 20px 0}.tab{padding:11px 14px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.055);cursor:pointer;font-weight:850;color:var(--muted)}.tab.active{color:#fff;background:linear-gradient(135deg,rgba(108,92,255,.35),rgba(0,225,255,.14));border-color:rgba(0,225,255,.35)}.tab-pane{display:none;padding:18px 20px 22px}.tab-pane.active{display:block}.toast{position:fixed;right:18px;bottom:18px;z-index:120;background:rgba(7,16,32,.95);border:1px solid var(--line);border-radius:16px;padding:14px 15px;box-shadow:var(--shadow);display:none;max-width:360px}.toast.show{display:block}.notice{display:none;margin:18px 0;padding:14px 16px;border-radius:18px;border:1px solid rgba(255,209,102,.35);background:rgba(255,209,102,.1);color:#ffe8aa}.notice.show{display:block}.profile-pill{display:none;align-items:center;gap:10px}.profile-pill.show{display:flex}.status-dot{width:9px;height:9px;border-radius:50%;background:var(--success);box-shadow:0 0 18px var(--success)}.status-dot.pending{background:var(--warn);box-shadow:0 0 18px var(--warn)}.teams{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:16px}.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.step{padding:16px;border-radius:20px;background:rgba(255,255,255,.055);border:1px solid var(--line)}.step b{display:block;font-size:22px;color:var(--primary2)}.footer{padding:40px 0;color:var(--muted);border-top:1px solid var(--line);margin-top:30px}.mobile-only{display:none}@media(max-width:980px){.hero-grid,.grid.two,.grid.three{grid-template-columns:1fr}.players,.teams{grid-template-columns:repeat(2,1fr)}.filters{grid-template-columns:1fr 1fr}.timeline{grid-template-columns:1fr 1fr}.navlinks{display:none}.hamb{display:inline-flex}}@media(max-width:640px){.container{width:min(100% - 22px,1180px)}.nav{height:68px}.actions .btn:not(.primary){display:none}.hero{padding-top:38px}.metrics,.players,.teams,.filters,.form-grid,.timeline{grid-template-columns:1fr}.span2{grid-column:span 1}.h1{letter-spacing:-1.4px}.mobile-only{display:block}.section-head{display:block}.modal-card{border-radius:20px}}
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="EsporGO ana sayfa"><span class="logo"></span><span>Espor<span class="grad">GO</span></span></a>
+    <nav class="navlinks">
+      <a href="#players">Oyuncular</a><a href="#teams">Takımlar</a><a href="#tournaments">Turnuva</a><a href="#system">Sistem</a>
+    </nav>
+    <div class="actions">
+      <div id="profilePill" class="profile-pill"><span id="statusDot" class="status-dot pending"></span><span id="profileName">Profil</span></div>
+      <button id="logoutBtn" class="btn small" style="display:none">Çıkış</button>
+      <button id="openAuth" class="btn primary">Kayıt Ol / Giriş</button>
+    </div>
+  </div>
+</header>
+<main id="home">
+  <section class="hero container">
+    <div id="setupNotice" class="notice"><b>Firebase bağlantısı bekleniyor:</b> Gerçek kayıt/giriş sisteminin çalışması için <code>firebase-config.js</code> dosyasındaki bilgileri doldurmalısın. Tasarım ve demo vitrin hazırdır.</div>
+    <div class="hero-grid">
+      <div>
+        <div class="badge">⚡ Türkiye odaklı gerçek e-spor eşleşme ağı</div>
+        <h1 class="h1">Oyuncuyu takıma, takımı <span class="grad">turnuvaya</span> bağlayan yeni merkez.</h1>
+        <p class="lead">EsporGO; oyuncu profili, şehir, rank, rol, mikrofon, platform ve aktiflik bilgilerini tek ekranda toplayarak doğru takım arkadaşını bulmayı hızlandırır. Kayıtlar admin onayından sonra yayınlanır; panel site içinde görünmez.</p>
+        <div class="hero-ctas">
+          <button class="btn primary" id="heroRegister">Hemen gerçek kayıt oluştur</button>
+          <a class="btn" href="#players">Oyuncuları incele</a>
+          <a class="btn" href="#teams">Takım ilanı ver</a>
+        </div>
+        <div class="metrics">
+          <div class="metric"><b id="statPlayers">0</b><span>Onaylı oyuncu</span></div>
+          <div class="metric"><b id="statTeams">0</b><span>Aktif takım ilanı</span></div>
+          <div class="metric"><b>81</b><span>Türkiye ili</span></div>
+        </div>
+      </div>
+      <div class="visual">
+        <div class="terminal">
+          <div class="terminal-top"><span>EsporGO Match Engine</span><span class="dots"><i></i><i></i><i></i></span></div>
+          <div class="match-card"><div class="row"><b>Akıllı oyuncu profili</b><span class="tag green">Gerçek kayıt</span></div><p class="muted">Email/şifre ile üyelik, Firestore profil kaydı, admin onayı.</p></div>
+          <div class="match-card"><div class="row"><b>Gelişmiş filtreleme</b><span class="tag cyan">Şehir + oyun + rank</span></div><p class="muted">Türkiye’nin 81 ili, popüler oyunlar, oyun bazlı rank seçenekleri.</p></div>
+          <div class="match-card"><div class="row"><b>Gizli admin paneli</b><span class="tag">/admin.html</span></div><p class="muted">Ana sitede görünmez. Sadece admin rolündeki hesaplar erişebilir.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="players" class="section container">
+    <div class="section-head"><div><div class="kicker">Oyuncu keşfi</div><h2 class="title">Filtrele, incele, takımına uygun kişiyi seç.</h2></div><p class="sub">Onaylı profiller burada listelenir. Kayıt sonrası profilin önce admin onayına düşer.</p></div>
+    <div class="panel pad">
+      <div class="filters">
+        <div class="field"><label>Arama</label><input class="input" id="searchInput" placeholder="Oyuncu adı, şehir, rol, discord..." /></div>
+        <div class="field"><label>Oyun</label><select id="gameFilter"><option value="">Tüm oyunlar</option></select></div>
+        <div class="field"><label>Şehir</label><select id="cityFilter"><option value="">Tüm şehirler</option></select></div>
+        <div class="field"><label>Rank</label><select id="rankFilter"><option value="">Tüm ranklar</option></select></div>
+        <div class="field"><label>Rol</label><select id="roleFilter"><option value="">Tüm roller</option></select></div>
+      </div>
+      <div id="playersGrid" class="players"></div>
+      <div id="playersEmpty" class="empty" style="display:none">Henüz bu filtrelere uygun onaylı oyuncu yok. İlk profesyonel profili sen oluşturabilirsin.</div>
+    </div>
+  </section>
+
+  <section id="teams" class="section container">
+    <div class="section-head"><div><div class="kicker">Takım ilanları</div><h2 class="title">Eksik rolünü duyur, kadronu tamamla.</h2></div><p class="sub">Takım ilanları da admin onayından sonra yayına alınır.</p></div>
+    <div class="grid two">
+      <div class="panel pad">
+        <h3>Takım ilanı oluştur</h3>
+        <p class="muted">Giriş yapmış kullanıcılar ilan gönderebilir. Yayınlanmadan önce gizli admin panelinde incelenir.</p>
+        <form id="teamForm" class="form-grid">
+          <div class="field"><label>Takım adı</label><input class="input" id="teamName" required placeholder="Örn. EIGHT7 ESPOR" /></div>
+          <div class="field"><label>Oyun</label><select id="teamGame" required></select></div>
+          <div class="field"><label>Aranan rol</label><select id="teamRole" required></select></div>
+          <div class="field"><label>Minimum rank</label><select id="teamRank" required></select></div>
+          <div class="field"><label>Şehir tercihi</label><select id="teamCity"><option value="Online / fark etmez">Online / fark etmez</option></select></div>
+          <div class="field"><label>İletişim</label><input class="input" id="teamContact" required placeholder="Discord veya iletişim" /></div>
+          <div class="field span2"><label>Açıklama</label><textarea id="teamDesc" required placeholder="Antrenman saatleri, beklenti, turnuva hedefi..."></textarea></div>
+          <button class="btn primary span2" type="submit">İlanı admin onayına gönder</button>
+        </form>
+      </div>
+      <div class="panel pad">
+        <h3>Aktif ilanlar</h3>
+        <div id="teamsGrid" class="teams"></div>
+        <div id="teamsEmpty" class="empty" style="display:none">Henüz onaylı takım ilanı yok.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tournaments" class="section container">
+    <div class="section-head"><div><div class="kicker">Turnuva akışı</div><h2 class="title">Hakemlik, kayıt ve duyuru akışı için hazır temel.</h2></div><p class="sub">Bu alan ikinci aşamada canlı fikstür, bracket ve maç sonucu yönetimine bağlanabilir.</p></div>
+    <div class="grid three">
+      <div class="card"><span class="tag cyan">Yakında</span><h3>Valorant Community Cup</h3><p class="muted">32 takım, tek eleme, Discord check-in, hakem odası.</p></div>
+      <div class="card"><span class="tag green">Planlandı</span><h3>CS2 Çanakkale Scrim Ligi</h3><p class="muted">Haftalık maç sistemi, takım istatistikleri ve demo paylaşımı.</p></div>
+      <div class="card"><span class="tag">Beta</span><h3>FiveM RP Etkinlik Takvimi</h3><p class="muted">Aile/ekip duyuruları, rol bazlı katılım ve etkinlik yönetimi.</p></div>
+    </div>
+  </section>
+
+  <section id="system" class="section container">
+    <div class="section-head"><div><div class="kicker">Sistem mimarisi</div><h2 class="title">Basit sayfa değil, gerçek ürüne dönüşebilir altyapı.</h2></div></div>
+    <div class="timeline">
+      <div class="step"><b>01</b><h3>Kayıt</h3><p class="muted">Firebase Auth ile gerçek üyelik.</p></div>
+      <div class="step"><b>02</b><h3>Profil</h3><p class="muted">Firestore’da şehir, oyun, rank ve rol bilgisi.</p></div>
+      <div class="step"><b>03</b><h3>Onay</h3><p class="muted">Admin onaylamadan profil yayınlanmaz.</p></div>
+      <div class="step"><b>04</b><h3>Yayın</h3><p class="muted">Onaylı veriler herkese açık vitrine düşer.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="container row"><span>© 2026 EsporGO. Türkiye odaklı e-spor MVP.</span><span class="muted">Admin paneli ana sitede gizlidir.</span></div></footer>
+
+<div id="authModal" class="modal" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <div class="modal-head"><div><b>EsporGO Hesap Merkezi</b><div class="muted">Kayıtlar gerçek veritabanına düşer ve admin onayı bekler.</div></div><button class="btn small" id="closeAuth">Kapat</button></div>
+    <div class="tabs"><button class="tab active" data-tab="registerPane">Kayıt Ol</button><button class="tab" data-tab="loginPane">Giriş Yap</button><button class="tab" data-tab="myProfilePane">Profilim</button></div>
+    <div id="registerPane" class="tab-pane active">
+      <form id="registerForm" class="form-grid">
+        <div class="field"><label>Oyuncu adı</label><input class="input" id="regPlayerName" minlength="3" maxlength="28" required placeholder="Örn. Raizela" /></div>
+        <div class="field"><label>E-posta</label><input class="input" type="email" id="regEmail" required placeholder="mail@ornek.com" /></div>
+        <div class="field"><label>Şifre</label><input class="input" type="password" id="regPassword" minlength="6" required placeholder="En az 6 karakter" /></div>
+        <div class="field"><label>Şehir</label><select id="regCity" required></select></div>
+        <div class="field"><label>Ana oyun</label><select id="regGame" required></select></div>
+        <div class="field"><label>Rank</label><select id="regRank" required></select></div>
+        <div class="field"><label>Ana rol</label><select id="regRole" required></select></div>
+        <div class="field"><label>Platform</label><select id="regPlatform" required></select></div>
+        <div class="field"><label>Aktiflik</label><select id="regAvailability" required></select></div>
+        <div class="field"><label>Mikrofon</label><select id="regMic" required><option value="Var">Var</option><option value="Yok">Yok</option><option value="Bazen">Bazen</option></select></div>
+        <div class="field"><label>Discord</label><input class="input" id="regDiscord" placeholder="kullaniciadi veya davet" /></div>
+        <div class="field"><label>Takım durumu</label><select id="regTeamStatus" required><option>Takım arıyorum</option><option>Takımım var, oyuncu arıyorum</option><option>Scrim/duo arıyorum</option><option>Sadece turnuva</option></select></div>
+        <div class="field span2"><label>Kısa açıklama</label><textarea id="regBio" maxlength="360" placeholder="Oyun tarzın, hedefin, deneyimin, saatlerin..."></textarea></div>
+        <label class="span2 muted" style="display:flex;gap:10px;align-items:flex-start"><input type="checkbox" id="regConfirm" required /> Verilerimin EsporGO profil başvurusu için saklanmasını ve admin onayından sonra herkese açık profil vitrininde yayınlanmasını kabul ediyorum.</label>
+        <button class="btn primary span2" type="submit">Gerçek kayıt oluştur</button>
+      </form>
+    </div>
+    <div id="loginPane" class="tab-pane">
+      <form id="loginForm" class="form-grid">
+        <div class="field"><label>E-posta</label><input class="input" type="email" id="loginEmail" required /></div>
+        <div class="field"><label>Şifre</label><input class="input" type="password" id="loginPassword" required /></div>
+        <button class="btn primary span2" type="submit">Giriş yap</button>
+      </form>
+    </div>
+    <div id="myProfilePane" class="tab-pane"><div id="myProfileBox" class="empty">Giriş yaptığında profil durumun burada görünecek.</div></div>
+  </div>
+</div>
+<div id="toast" class="toast"></div>
+<script type="module">
+import { firebaseConfig } from './firebase-config.js';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js';
+import { getFirestore, collection, doc, setDoc, getDoc, addDoc, onSnapshot, serverTimestamp, query, orderBy } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js';
+
+const CITIES = ["Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin", "Aydın", "Balıkesir", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa", "Çanakkale", "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Edirne", "Elazığ", "Erzincan", "Erzurum", "Eskişehir", "Gaziantep", "Giresun", "Gümüşhane", "Hakkâri", "Hatay", "Isparta", "Mersin", "İstanbul", "İzmir", "Kars", "Kastamonu", "Kayseri", "Kırklareli", "Kırşehir", "Kocaeli", "Konya", "Kütahya", "Malatya", "Manisa", "Kahramanmaraş", "Mardin", "Muğla", "Muş", "Nevşehir", "Niğde", "Ordu", "Rize", "Sakarya", "Samsun", "Siirt", "Sinop", "Sivas", "Tekirdağ", "Tokat", "Trabzon", "Tunceli", "Şanlıurfa", "Uşak", "Van", "Yozgat", "Zonguldak", "Aksaray", "Bayburt", "Karaman", "Kırıkkale", "Batman", "Şırnak", "Bartın", "Ardahan", "Iğdır", "Yalova", "Karabük", "Kilis", "Osmaniye", "Düzce"];
+const GAMES = [{"name": "Counter-Strike 2", "short": "CS2", "genre": "FPS", "platforms": ["PC"], "ranks": ["Premier 0-4K", "Premier 5-9K", "Premier 10-14K", "Premier 15-19K", "Premier 20K+", "Silver", "Gold Nova", "Master Guardian", "Legendary Eagle", "Supreme", "Global Elite"]}, {"name": "Valorant", "short": "VAL", "genre": "Tactical FPS", "platforms": ["PC"], "ranks": ["Iron", "Bronze", "Silver", "Gold", "Platinum", "Diamond", "Ascendant", "Immortal", "Radiant"]}, {"name": "League of Legends", "short": "LoL", "genre": "MOBA", "platforms": ["PC"], "ranks": ["Iron", "Bronze", "Silver", "Gold", "Platinum", "Emerald", "Diamond", "Master", "Grandmaster", "Challenger"]}, {"name": "Dota 2", "short": "DOTA", "genre": "MOBA", "platforms": ["PC"], "ranks": ["Herald", "Guardian", "Crusader", "Archon", "Legend", "Ancient", "Divine", "Immortal"]}, {"name": "PUBG: Battlegrounds", "short": "PUBG", "genre": "Battle Royale", "platforms": ["PC", "Console"], "ranks": ["Bronze", "Silver", "Gold", "Platinum", "Diamond", "Master", "Grandmaster"]}, {"name": "PUBG Mobile", "short": "PUBGM", "genre": "Mobile Battle Royale", "platforms": ["Mobile"], "ranks": ["Bronze", "Silver", "Gold", "Platinum", "Diamond", "Crown", "Ace", "Conqueror"]}, {"name": "Mobile Legends: Bang Bang", "short": "MLBB", "genre": "Mobile MOBA", "platforms": ["Mobile"], "ranks": ["Warrior", "Elite", "Master", "Grandmaster", "Epic", "Legend", "Mythic", "Mythical Honor", "Mythical Glory", "Mythical Immortal"]}, {"name": "Fortnite", "short": "FN", "genre": "Battle Royale", "platforms": ["PC", "Console", "Mobile"], "ranks": ["Bronze", "Silver", "Gold", "Platinum", "Diamond", "Elite", "Champion", "Unreal"]}, {"name": "Apex Legends", "short": "APEX", "genre": "Hero Shooter BR", "platforms": ["PC", "Console"], "ranks": ["Rookie", "Bronze", "Silver", "Gold", "Platinum", "Diamond", "Master", "Apex Predator"]}, {"name": "Rocket League", "short": "RL", "genre": "Sports", "platforms": ["PC", "Console"], "ranks": ["Bronze", "Silver", "Gold", "Platinum", "Diamond", "Champion", "Grand Champion", "Supersonic Legend"]}, {"name": "Rainbow Six Siege", "short": "R6", "genre": "Tactical FPS", "platforms": ["PC", "Console"], "ranks": ["Copper", "Bronze", "Silver", "Gold", "Platinum", "Emerald", "Diamond", "Champion"]}, {"name": "Overwatch 2", "short": "OW2", "genre": "Hero Shooter", "platforms": ["PC", "Console"], "ranks": ["Bronze", "Silver", "Gold", "Platinum", "Diamond", "Master", "Grandmaster", "Champion"]}, {"name": "Call of Duty: Warzone", "short": "WZ", "genre": "Battle Royale FPS", "platforms": ["PC", "Console"], "ranks": ["Bronze", "Silver", "Gold", "Platinum", "Diamond", "Crimson", "Iridescent", "Top 250"]}, {"name": "Call of Duty: Modern Warfare / Ranked", "short": "COD", "genre": "FPS", "platforms": ["PC", "Console"], "ranks": ["Bronze", "Silver", "Gold", "Platinum", "Diamond", "Crimson", "Iridescent", "Top 250"]}, {"name": "Free Fire", "short": "FF", "genre": "Mobile Battle Royale", "platforms": ["Mobile"], "ranks": ["Bronze", "Silver", "Gold", "Platinum", "Diamond", "Heroic", "Grandmaster"]}, {"name": "EA SPORTS FC", "short": "FC", "genre": "Sports", "platforms": ["PC", "Console"], "ranks": ["Division 10", "Division 9", "Division 8", "Division 7", "Division 6", "Division 5", "Division 4", "Division 3", "Division 2", "Division 1", "Elite"]}, {"name": "eFootball", "short": "eFootball", "genre": "Sports", "platforms": ["PC", "Console", "Mobile"], "ranks": ["Division 10", "Division 9", "Division 8", "Division 7", "Division 6", "Division 5", "Division 4", "Division 3", "Division 2", "Division 1"]}, {"name": "Teamfight Tactics", "short": "TFT", "genre": "Auto Battler", "platforms": ["PC", "Mobile"], "ranks": ["Iron", "Bronze", "Silver", "Gold", "Platinum", "Emerald", "Diamond", "Master", "Grandmaster", "Challenger"]}, {"name": "Hearthstone", "short": "HS", "genre": "Card Game", "platforms": ["PC", "Mobile"], "ranks": ["Bronze", "Silver", "Gold", "Platinum", "Diamond", "Legend"]}, {"name": "Brawl Stars", "short": "Brawl", "genre": "Mobile Action", "platforms": ["Mobile"], "ranks": ["Yeni", "Orta", "İyi", "Uzman", "Mythic", "Legendary", "Masters"]}, {"name": "Clash Royale", "short": "CR", "genre": "Mobile Strategy", "platforms": ["Mobile"], "ranks": ["Arena", "Challenger", "Master", "Champion", "Grand Champion", "Ultimate Champion"]}, {"name": "Point Blank", "short": "PB", "genre": "FPS", "platforms": ["PC"], "ranks": ["Yeni", "Orta", "İyi", "Uzman", "Turnuva Deneyimli", "Pro"]}, {"name": "Zula", "short": "Zula", "genre": "FPS", "platforms": ["PC"], "ranks": ["Bronz", "Gümüş", "Altın", "Platin", "Elmas", "Efsane", "Pro"]}, {"name": "FiveM / GTA V Roleplay", "short": "FiveM", "genre": "RP / Multiplayer", "platforms": ["PC"], "ranks": ["Yeni RP", "Orta RP", "İleri RP", "Legal Ekip", "Illegal Ekip", "Ekip Lideri", "Sunucu Yetkilisi"]}, {"name": "GTA Online", "short": "GTAO", "genre": "Online Action", "platforms": ["PC", "Console"], "ranks": ["Yeni", "Orta", "Deneyimli", "Crew Lideri", "Veteran"]}, {"name": "Minecraft PvP", "short": "MCPVP", "genre": "Sandbox PvP", "platforms": ["PC", "Mobile", "Console"], "ranks": ["Yeni", "Orta", "İyi", "Usta", "Turnuva Deneyimli", "Pro"]}, {"name": "Roblox Competitive", "short": "Roblox", "genre": "UGC Competitive", "platforms": ["PC", "Mobile", "Console"], "ranks": ["Yeni", "Orta", "İyi", "Usta", "Takım Lideri"]}, {"name": "Tekken 8", "short": "TK8", "genre": "Fighting", "platforms": ["PC", "Console"], "ranks": ["Beginner", "Green", "Yellow", "Orange", "Red", "Purple", "Blue", "Tekken King", "God"]}, {"name": "Street Fighter 6", "short": "SF6", "genre": "Fighting", "platforms": ["PC", "Console"], "ranks": ["Rookie", "Iron", "Bronze", "Silver", "Gold", "Platinum", "Diamond", "Master", "Legend"]}, {"name": "Mortal Kombat 1", "short": "MK1", "genre": "Fighting", "platforms": ["PC", "Console"], "ranks": ["Yeni", "Orta", "İyi", "Usta", "Elder God", "Pro"]}, {"name": "Arena Breakout", "short": "AB", "genre": "Extraction Shooter", "platforms": ["Mobile", "PC"], "ranks": ["Rookie", "Vanguard", "Elite", "Expert", "Master", "Legend"]}, {"name": "Delta Force", "short": "DF", "genre": "FPS", "platforms": ["PC", "Mobile"], "ranks": ["Recruit", "Bronze", "Silver", "Gold", "Platinum", "Diamond", "Master", "Legend"]}, {"name": "Rust", "short": "Rust", "genre": "Survival PvP", "platforms": ["PC"], "ranks": ["Yeni", "Orta", "İyi", "Clan Oyuncusu", "Raid Lideri", "Veteran"]}, {"name": "World of Warcraft Arena", "short": "WoW", "genre": "MMO PvP", "platforms": ["PC"], "ranks": ["Challenger", "Rival", "Duelist", "Elite", "Gladiator"]}, {"name": "Diğer Oyun", "short": "Other", "genre": "Other", "platforms": ["PC", "Console", "Mobile"], "ranks": ["Başlangıç", "Orta", "İyi", "Uzman", "Pro"]}];
+const ROLES = ["Duelist / Entry", "IGL / Lider", "AWP / Sniper", "Support", "Controller", "Initiator", "Sentinel", "Rifler", "Lurker", "Jungler", "Mid", "Top", "ADC", "Support Lane", "Carry", "Offlane", "Roamer", "Goalkeeper", "Striker", "Flex", "Medic / EMS", "Police / Legal RP", "Illegal RP", "Mekanik", "Streamer", "Coach", "Analyst", "Hakem", "Yedek Oyuncu"];
+const PLATFORMS = ["PC", "PlayStation", "Xbox", "Nintendo Switch", "Mobile Android", "Mobile iOS", "Cross-platform"];
+const AVAILABILITY = ["Hafta içi akşam", "Hafta sonu", "Her gün", "Sadece turnuva günleri", "Esnek saat", "Gece aktif"];
+const qs = s => document.querySelector(s);
+const qsa = s => [...document.querySelectorAll(s)];
+const validConfig = firebaseConfig && firebaseConfig.apiKey && !String(firebaseConfig.apiKey).includes('BURAYA');
+let app, auth, db, currentUser = null, myProfile = null;
+let publicPlayers = [], publicTeams = [];
+
+function toast(msg){ const el=qs('#toast'); el.textContent=msg; el.classList.add('show'); setTimeout(()=>el.classList.remove('show'),4200); }
+function escapeHTML(str=''){ return String(str).replace(/[&<>'"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[m])); }
+function initials(name='GO'){ return name.split(/\s+/).slice(0,2).map(x=>x[0]).join('').toUpperCase(); }
+function fillSelect(sel, items, placeholder){ const el = typeof sel==='string'?qs(sel):sel; if(!el) return; el.innerHTML = placeholder ? `<option value="">${placeholder}</option>` : ''; items.forEach(item=>{ const v = typeof item==='string'?item:item.name; const label = typeof item==='string'?item:`${item.name} · ${item.genre}`; el.insertAdjacentHTML('beforeend', `<option value="${escapeHTML(v)}">${escapeHTML(label)}</option>`); }); }
+function getGame(name){ return GAMES.find(g=>g.name===name) || GAMES[GAMES.length-1]; }
+function updateRankSelect(gameSel, rankSel, withAll=false){ const game = getGame(qs(gameSel).value || GAMES[0].name); const ranks = game.ranks || ['Başlangıç','Orta','İyi','Uzman','Pro']; fillSelect(rankSel, ranks, withAll?'Tüm ranklar':null); }
+function uniq(arr){ return [...new Set(arr.filter(Boolean))].sort((a,b)=>a.localeCompare(b,'tr')); }
+function setupOptions(){
+  fillSelect('#cityFilter', CITIES, 'Tüm şehirler'); fillSelect('#regCity', CITIES, 'Şehir seç'); fillSelect('#teamCity', CITIES, 'Online / fark etmez');
+  fillSelect('#gameFilter', GAMES, 'Tüm oyunlar'); fillSelect('#regGame', GAMES, null); fillSelect('#teamGame', GAMES, null);
+  fillSelect('#roleFilter', ROLES, 'Tüm roller'); fillSelect('#regRole', ROLES, 'Rol seç'); fillSelect('#teamRole', ROLES, 'Rol seç');
+  fillSelect('#regPlatform', PLATFORMS, 'Platform seç'); fillSelect('#regAvailability', AVAILABILITY, 'Aktiflik seç');
+  updateRankSelect('#regGame','#regRank'); updateRankSelect('#teamGame','#teamRank'); fillSelect('#rankFilter', uniq(GAMES.flatMap(g=>g.ranks)), 'Tüm ranklar');
+  qs('#regGame').addEventListener('change',()=>updateRankSelect('#regGame','#regRank'));
+  qs('#teamGame').addEventListener('change',()=>updateRankSelect('#teamGame','#teamRank'));
+}
+function renderPlayers(){
+  const search = qs('#searchInput').value.toLowerCase().trim(); const game=qs('#gameFilter').value; const city=qs('#cityFilter').value; const rank=qs('#rankFilter').value; const role=qs('#roleFilter').value;
+  const data = publicPlayers.filter(p => (!game || p.game===game) && (!city || p.city===city) && (!rank || p.rank===rank) && (!role || p.gameRole===role) && (!search || [p.playerName,p.city,p.rank,p.gameRole,p.discord,p.bio,p.game].join(' ').toLowerCase().includes(search)));
+  qs('#playersGrid').innerHTML = data.map(p => `<article class="card"><div class="row"><div class="row" style="justify-content:flex-start"><div class="avatar">${escapeHTML(initials(p.playerName))}</div><div><h3>${escapeHTML(p.playerName || 'Oyuncu')}</h3><div class="muted">${escapeHTML(p.city || '-')} · ${escapeHTML(p.platform || '-')}</div></div></div>${p.verified?'<span class="tag green">Doğrulanmış</span>':'<span class="tag">Oyuncu</span>'}</div><div class="card-meta"><span class="tag cyan">${escapeHTML(p.game||'-')}</span><span class="tag">${escapeHTML(p.rank||'-')}</span><span class="tag green">${escapeHTML(p.gameRole||'-')}</span></div><p class="muted">${escapeHTML(p.bio || 'Profil açıklaması eklenmemiş.')}</p><div class="divider"></div><div class="row"><span class="muted">🎙 ${escapeHTML(p.mic||'-')} · ${escapeHTML(p.availability||'-')}</span><span class="muted">${escapeHTML(p.discord||'Discord gizli')}</span></div></article>`).join('');
+  qs('#playersEmpty').style.display = data.length?'none':'block'; qs('#statPlayers').textContent = publicPlayers.length;
+}
+function renderTeams(){
+  qs('#teamsGrid').innerHTML = publicTeams.map(t => `<article class="card"><div class="row"><h3>${escapeHTML(t.teamName)}</h3><span class="tag cyan">${escapeHTML(t.game)}</span></div><div class="card-meta"><span class="tag green">${escapeHTML(t.wantedRole)}</span><span class="tag">Min: ${escapeHTML(t.minRank)}</span><span class="tag">${escapeHTML(t.city || 'Online')}</span></div><p class="muted">${escapeHTML(t.description)}</p><div class="divider"></div><div class="row"><span class="muted">İletişim</span><b>${escapeHTML(t.contact)}</b></div></article>`).join('');
+  qs('#teamsEmpty').style.display = publicTeams.length?'none':'block'; qs('#statTeams').textContent = publicTeams.length;
+}
+function setAuthUI(){
+  const logged = !!currentUser; qs('#openAuth').style.display = logged?'none':'inline-flex'; qs('#logoutBtn').style.display = logged?'inline-flex':'none'; qs('#profilePill').classList.toggle('show', logged);
+  if(logged){ qs('#profileName').textContent = myProfile?.playerName || currentUser.email; qs('#statusDot').className = 'status-dot ' + (myProfile?.status==='approved'?'':'pending'); }
+  const box=qs('#myProfileBox');
+  if(!logged){ box.className='empty'; box.textContent='Giriş yaptığında profil durumun burada görünecek.'; return; }
+  const status = myProfile?.status || 'pending';
+  box.className='card'; box.innerHTML = `<div class="row"><h3>${escapeHTML(myProfile?.playerName || currentUser.email)}</h3><span class="tag ${status==='approved'?'green':status==='rejected'?'red':''}">${escapeHTML(status)}</span></div><p class="muted">${status==='approved'?'Profilin yayında.':status==='rejected'?'Profilin reddedildi veya düzenleme bekliyor.':'Profilin admin onayı bekliyor.'}</p><div class="card-meta"><span class="tag cyan">${escapeHTML(myProfile?.game||'-')}</span><span class="tag">${escapeHTML(myProfile?.rank||'-')}</span><span class="tag green">${escapeHTML(myProfile?.city||'-')}</span></div>`;
+}
+async function loadMyProfile(user){ if(!validConfig || !user) return null; const snap = await getDoc(doc(db,'users',user.uid)); return snap.exists()?snap.data():null; }
+async function register(e){
+  e.preventDefault(); if(!validConfig){ toast('Önce firebase-config.js dosyasını doldurmalısın.'); return; }
+  const payload = { playerName:qs('#regPlayerName').value.trim(), email:qs('#regEmail').value.trim().toLowerCase(), city:qs('#regCity').value, game:qs('#regGame').value, rank:qs('#regRank').value, gameRole:qs('#regRole').value, platform:qs('#regPlatform').value, availability:qs('#regAvailability').value, mic:qs('#regMic').value, discord:qs('#regDiscord').value.trim(), teamStatus:qs('#regTeamStatus').value, bio:qs('#regBio').value.trim(), status:'pending', role:'player', verified:false, createdAt:serverTimestamp(), updatedAt:serverTimestamp() };
+  const cred = await createUserWithEmailAndPassword(auth, payload.email, qs('#regPassword').value); await updateProfile(cred.user,{displayName:payload.playerName});
+  await setDoc(doc(db,'users',cred.user.uid), { ...payload, uid:cred.user.uid });
+  qs('#registerForm').reset(); updateRankSelect('#regGame','#regRank'); toast('Kayıt başarıyla oluşturuldu. Admin onayından sonra profilin yayına alınacak.');
+}
+async function login(e){ e.preventDefault(); if(!validConfig){ toast('Firebase config eksik.'); return; } await signInWithEmailAndPassword(auth, qs('#loginEmail').value.trim(), qs('#loginPassword').value); toast('Giriş başarılı.'); qs('#authModal').classList.remove('open'); }
+async function createTeam(e){
+  e.preventDefault(); if(!validConfig){ toast('Firebase config eksik.'); return; } if(!currentUser){ toast('Takım ilanı göndermek için önce giriş yapmalısın.'); qs('#authModal').classList.add('open'); return; }
+  const data = { ownerUid:currentUser.uid, ownerEmail:currentUser.email, teamName:qs('#teamName').value.trim(), game:qs('#teamGame').value, wantedRole:qs('#teamRole').value, minRank:qs('#teamRank').value, city:qs('#teamCity').value || 'Online / fark etmez', contact:qs('#teamContact').value.trim(), description:qs('#teamDesc').value.trim(), status:'pending', createdAt:serverTimestamp() };
+  await addDoc(collection(db,'teamRequests'), data); qs('#teamForm').reset(); updateRankSelect('#teamGame','#teamRank'); toast('Takım ilanı admin onayına gönderildi.');
+}
+function bindUI(){
+  qs('#openAuth').onclick=()=>qs('#authModal').classList.add('open'); qs('#heroRegister').onclick=()=>qs('#authModal').classList.add('open'); qs('#closeAuth').onclick=()=>qs('#authModal').classList.remove('open');
+  qs('#logoutBtn').onclick=async()=>{ if(validConfig) await signOut(auth); };
+  qsa('.tab').forEach(t=>t.onclick=()=>{qsa('.tab').forEach(x=>x.classList.remove('active')); qsa('.tab-pane').forEach(x=>x.classList.remove('active')); t.classList.add('active'); qs('#'+t.dataset.tab).classList.add('active');});
+  ['#searchInput','#gameFilter','#cityFilter','#rankFilter','#roleFilter'].forEach(id=>qs(id).addEventListener('input',renderPlayers));
+  qs('#registerForm').addEventListener('submit', e=>register(e).catch(err=>toast(err.message)));
+  qs('#loginForm').addEventListener('submit', e=>login(e).catch(err=>toast(err.message)));
+  qs('#teamForm').addEventListener('submit', e=>createTeam(e).catch(err=>toast(err.message)));
+}
+function startDemo(){
+  qs('#setupNotice').classList.add('show');
+  publicPlayers = [
+    {playerName:'Raizela',city:'Çanakkale',game:'Valorant',rank:'Ascendant',gameRole:'IGL / Lider',platform:'PC',mic:'Var',availability:'Hafta içi akşam',discord:'raizela',bio:'Taktik disiplinli, takım oyunu odaklı oyuncu.',verified:true},
+    {playerName:'EIGHT7 Scout',city:'İstanbul',game:'Counter-Strike 2',rank:'Premier 15-19K',gameRole:'Rifler',platform:'PC',mic:'Var',availability:'Hafta sonu',discord:'eight7.scout',bio:'Scrim ve turnuva kadrosu arıyor.',verified:false},
+    {playerName:'NG Green',city:'İzmir',game:'FiveM / GTA V Roleplay',rank:'Illegal Ekip',gameRole:'Illegal RP',platform:'PC',mic:'Var',availability:'Gece aktif',discord:'nggreen',bio:'Aile/çete RP deneyimi yüksek.',verified:true}
+  ];
+  publicTeams = [{teamName:'EIGHT7 ESPOR',game:'Point Blank',wantedRole:'AWP / Sniper',minRank:'Uzman',city:'Online / fark etmez',contact:'Discord: eight7',description:'Turnuva kadrosu için mikrofonu olan disiplinli oyuncu aranıyor.'}]; renderPlayers(); renderTeams();
+}
+function startFirebase(){
+  app = initializeApp(firebaseConfig); auth = getAuth(app); db = getFirestore(app);
+  onAuthStateChanged(auth, async user=>{ currentUser=user; myProfile = user? await loadMyProfile(user):null; setAuthUI(); });
+  onSnapshot(query(collection(db,'publicPlayers'), orderBy('createdAt','desc')), snap=>{ publicPlayers = snap.docs.map(d=>({id:d.id,...d.data()})); renderPlayers(); }, err=>toast('Oyuncular yüklenemedi: '+err.message));
+  onSnapshot(query(collection(db,'publicTeams'), orderBy('createdAt','desc')), snap=>{ publicTeams = snap.docs.map(d=>({id:d.id,...d.data()})); renderTeams(); }, err=>toast('Takımlar yüklenemedi: '+err.message));
+}
+setupOptions(); bindUI(); if(validConfig) startFirebase(); else startDemo(); setAuthUI();
+</script>
+</body>
+</html>
