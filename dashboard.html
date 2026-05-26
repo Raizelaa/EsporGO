@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="tr">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Panelim | EsporGO V3</title><meta name="description" content="EsporGO kullanıcı paneli." /><link rel="stylesheet" href="./assets/css/style.css" /></head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="./index.html"><span class="logo-mark"></span><span class="brand-text"><strong>EsporGO</strong><span>User Panel</span></span></a>
+    <div class="side-nav">
+      <button class="btn active" data-tab="overview">Genel Durum</button>
+      <button class="btn" data-tab="profile">Profil Düzenle</button>
+      <button class="btn" data-tab="teamRequest">Takım İlanı</button>
+      <button class="btn" data-tab="tournamentRequest">Turnuva Talebi</button>
+      <a class="btn" href="./players.html">Oyuncu Bul</a>
+      <a class="btn" href="./teams.html">Takımlar</a>
+      <button class="btn danger" id="logoutButton">Çıkış Yap</button>
+    </div>
+  </aside>
+  <main class="main-area">
+    <div class="top-area">
+      <div><div class="kicker">Kullanıcı paneli</div><h1 class="title">EsporGO kontrol alanın</h1><p class="muted">Profil durumunu gör, bilgilerini güncelle, takım ilanı veya turnuva talebi gönder.</p></div>
+      <a class="btn" href="./index.html">Siteye Dön</a>
+    </div>
+
+    <section id="overview" class="dashboard-section active">
+      <div class="grid four">
+        <div class="metric-card"><strong id="profileStatus">-</strong><span>Profil durumu</span></div>
+        <div class="metric-card"><strong id="profileGame">-</strong><span>Ana oyun</span></div>
+        <div class="metric-card"><strong id="profileRank">-</strong><span>Rank</span></div>
+        <div class="metric-card"><strong id="profileCity">-</strong><span>Şehir</span></div>
+      </div>
+      <div class="panel pad" style="margin-top:16px"><div class="card-row"><div><h2>Profil özeti</h2><p class="muted" id="profileSummary">Giriş kontrol ediliyor...</p></div><span id="verifiedBadge" class="badge-mini">Doğrulama</span></div><div class="divider"></div><p class="small-text">Profilin onaylandıktan sonra Oyuncu Bul sayfasında görünür. Pending durumundaysa admin onayı beklenir.</p></div>
+    </section>
+
+    <section id="profile" class="dashboard-section">
+      <form id="profileForm" class="panel pad grid">
+        <h2>Profil bilgilerini güncelle</h2>
+        <div class="form-grid">
+          <div class="field"><label>Oyuncu adı</label><input class="input" name="playerName" required /></div>
+          <div class="field"><label>Yaş</label><input class="input" name="age" type="number" min="12" max="70" /></div>
+          <div class="field"><label>Şehir</label><select name="city" id="profileCitySelect"></select></div>
+          <div class="field"><label>Discord</label><input class="input" name="discord" /></div>
+          <div class="field"><label>Ana oyun</label><select name="game" id="profileGameSelect"></select></div>
+          <div class="field"><label>Rank</label><select name="rank" id="profileRankSelect"></select></div>
+          <div class="field"><label>Rol</label><select name="gameRole" id="profileRoleSelect"></select></div>
+          <div class="field"><label>Platform</label><select name="platform" id="profilePlatformSelect"></select></div>
+          <div class="field"><label>Mikrofon</label><select name="mic" id="profileMicSelect"></select></div>
+          <div class="field"><label>Aktiflik</label><select name="availability" id="profileAvailabilitySelect"></select></div>
+          <div class="field"><label>Takım durumu</label><select name="teamStatus" id="profileTeamStatusSelect"></select></div>
+          <div class="field"><label>Dil</label><input class="input" name="language" /></div>
+          <div class="field full"><label>Bio</label><textarea name="bio"></textarea></div>
+        </div>
+        <button class="btn primary" type="submit">Profili Güncelle</button>
+      </form>
+    </section>
+
+    <section id="teamRequest" class="dashboard-section">
+      <form id="teamForm" class="panel pad grid">
+        <h2>Takım ilanı oluştur</h2>
+        <p class="small-text">İlan admin onayından sonra Takımlar sayfasında görünür.</p>
+        <div class="form-grid">
+          <div class="field"><label>Takım adı</label><input class="input" name="teamName" required /></div>
+          <div class="field"><label>Oyun</label><select name="game" id="teamGameSelect" required></select></div>
+          <div class="field"><label>Aranan rol</label><select name="wantedRole" id="teamRoleSelect" required></select></div>
+          <div class="field"><label>Minimum rank</label><select name="minRank" id="teamRankSelect" required></select></div>
+          <div class="field"><label>Şehir tercihi</label><select name="city" id="teamCitySelect" required></select></div>
+          <div class="field"><label>İletişim</label><input class="input" name="contact" required placeholder="Discord sunucusu / kullanıcı adı" /></div>
+          <div class="field full"><label>Antrenman düzeni</label><input class="input" name="trainingDays" placeholder="Örn: Salı - Perşembe - Pazar 21:00" /></div>
+          <div class="field full"><label>İlan açıklaması</label><textarea name="description" required placeholder="Takım hedefi, kurallar, beklentiler..."></textarea></div>
+        </div>
+        <button class="btn success" type="submit">Admin Onayına Gönder</button>
+      </form>
+    </section>
+
+    <section id="tournamentRequest" class="dashboard-section">
+      <form id="tournamentForm" class="panel pad grid">
+        <h2>Turnuva talebi oluştur</h2>
+        <p class="small-text">Hakemlik, yayın, format ve ödül detayları için ön talep gönder.</p>
+        <div class="form-grid">
+          <div class="field"><label>Turnuva adı</label><input class="input" name="tournamentName" required /></div>
+          <div class="field"><label>Oyun</label><select name="game" id="tournamentGameSelect" required></select></div>
+          <div class="field"><label>Format</label><input class="input" name="format" required placeholder="5v5 / Duo / Solo / RP Event" /></div>
+          <div class="field"><label>Takım sayısı</label><input class="input" name="teamCount" required placeholder="16 takım" /></div>
+          <div class="field"><label>Ödül</label><input class="input" name="prize" placeholder="Sponsor / nakit / topluluk ödülü" /></div>
+          <div class="field"><label>Tarih tercihi</label><input class="input" name="datePreference" placeholder="Haziran sonu / hafta sonu" /></div>
+          <div class="field full"><label>Detay</label><textarea name="description" placeholder="Kurallar, yayın, hakem, bracket beklentisi..."></textarea></div>
+        </div>
+        <button class="btn primary" type="submit">Turnuva Talebi Gönder</button>
+      </form>
+    </section>
+  </main>
+</div>
+<div id="toast" class="toast"></div>
+<script type="module" src="./assets/js/dashboard.js"></script>
+</body>
+</html>

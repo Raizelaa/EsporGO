@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="tr">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Turnuvalar | EsporGO V3</title><meta name="description" content="EsporGO turnuva takvimi ve turnuva talebi başvuruları." /><link rel="stylesheet" href="./assets/css/style.css" /></head>
+<body>
+<header class="topbar"><nav class="container nav"><a class="brand" href="./index.html"><span class="logo-mark"></span><span class="brand-text"><strong>EsporGO</strong><span>Tournament Hub</span></span></a><div class="nav-links" id="navLinks"><a data-nav href="./index.html">Ana Sayfa</a><a data-nav href="./players.html">Oyuncu Bul</a><a data-nav href="./teams.html">Takımlar</a><a data-nav href="./tournaments.html">Turnuvalar</a><a data-nav href="./dashboard.html">Panelim</a></div><div class="nav-actions"><a class="btn ghost" href="./login.html">Giriş</a><a class="btn primary" href="./dashboard.html">Turnuva Talebi</a><button id="mobileMenuButton" class="btn mobile-menu">☰</button></div></nav></header>
+<main>
+  <section class="page-hero"><div class="container page-hero-inner"><div><div class="breadcrumb"><a href="./index.html">EsporGO</a> / Turnuvalar</div><h1 class="h1">Turnuva <span class="gradient-text">operasyon alanı</span></h1><p class="lead">Yaklaşan turnuvaları incele, format ve seviye bilgisini gör, kendi turnuva önerini panelinden gönder.</p></div><a class="btn primary" href="./dashboard.html">Turnuva Talebi Oluştur</a></div></section>
+  <section class="section"><div class="container">
+    <div class="section-head"><div><div class="kicker">Turnuva vitrini</div><h2 class="title">Planlanan etkinlikler</h2></div><p class="section-copy">Bu alan V3 için turnuva vitrini olarak hazırlandı. Admin onaylı taleplerle genişletilebilir.</p></div>
+    <div id="tournamentGrid" class="grid two"></div>
+  </div></section>
+</main>
+<footer class="footer"><div class="container footer-grid"><span>EsporGO © <span id="year"></span></span><div class="footer-links"><a href="./players.html">Oyuncu Bul</a><a href="./teams.html">Takımlar</a></div></div></footer>
+<div id="toast" class="toast"></div>
+<script type="module" src="./assets/js/tournaments.js"></script>
+</body>
+</html>

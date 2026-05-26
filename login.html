@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="tr">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Giriş / Kayıt | EsporGO V3</title><meta name="description" content="EsporGO oyuncu kayıt ve giriş ekranı." /><link rel="stylesheet" href="./assets/css/style.css" /></head>
+<body>
+<header class="topbar"><nav class="container nav"><a class="brand" href="./index.html"><span class="logo-mark"></span><span class="brand-text"><strong>EsporGO</strong><span>Secure Auth</span></span></a><div class="nav-links" id="navLinks"><a data-nav href="./index.html">Ana Sayfa</a><a data-nav href="./players.html">Oyuncu Bul</a><a data-nav href="./teams.html">Takımlar</a><a data-nav href="./tournaments.html">Turnuvalar</a><a data-nav href="./dashboard.html">Panelim</a></div><div class="nav-actions"><a class="btn" href="./players.html">Oyuncuları Gör</a><button id="mobileMenuButton" class="btn mobile-menu">☰</button></div></nav></header>
+<main class="container auth-layout">
+  <section>
+    <div class="eyebrow">Firebase Auth + Firestore</div>
+    <h1 class="h1">EsporGO hesabını <span class="gradient-text">profesyonel şekilde</span> oluştur.</h1>
+    <p class="lead">Kayıt formu dört adımdan oluşur. Profilin önce admin onayına düşer, onaydan sonra Oyuncu Bul sayfasında yayınlanır.</p>
+    <div class="metric-grid">
+      <div class="metric-card"><strong>4</strong><span>Kayıt adımı</span></div>
+      <div class="metric-card"><strong>81</strong><span>Şehir</span></div>
+      <div class="metric-card"><strong>30+</strong><span>Oyun</span></div>
+      <div class="metric-card"><strong>100%</strong><span>Admin onaylı</span></div>
+    </div>
+  </section>
+  <section class="panel pad">
+    <div class="auth-tabs"><button id="loginTab" class="active" type="button">Giriş Yap</button><button id="registerTab" type="button">Kayıt Ol</button></div>
+
+    <form id="loginForm" class="grid" autocomplete="on">
+      <div class="field"><label>E-posta</label><input class="input" name="email" type="email" required placeholder="ornek@mail.com" /></div>
+      <div class="field"><label>Şifre</label><input class="input" name="password" type="password" required minlength="6" placeholder="Şifren" /></div>
+      <button class="btn primary" type="submit">Giriş Yap</button>
+      <p class="small-text">Girişten sonra kullanıcı paneline yönlendirilirsin.</p>
+    </form>
+
+    <form id="registerForm" class="grid hide" autocomplete="on">
+      <div class="stepper">
+        <div class="step active" data-step-label="0">1. Hesap</div>
+        <div class="step" data-step-label="1">2. Oyuncu</div>
+        <div class="step" data-step-label="2">3. Oyun</div>
+        <div class="step" data-step-label="3">4. Profil</div>
+      </div>
+      <div class="step-panel active" data-step="0">
+        <div class="form-grid">
+          <div class="field"><label>E-posta</label><input class="input" name="email" type="email" required placeholder="ornek@mail.com" /></div>
+          <div class="field"><label>Şifre</label><input class="input" name="password" type="password" required minlength="6" placeholder="En az 6 karakter" /></div>
+          <div class="field full"><label>Oyuncu adı</label><input class="input" name="playerName" required minlength="3" maxlength="24" placeholder="Örn: RaiZela" /></div>
+        </div>
+      </div>
+      <div class="step-panel" data-step="1">
+        <div class="form-grid">
+          <div class="field"><label>Yaş</label><input class="input" name="age" type="number" min="12" max="70" required placeholder="24" /></div>
+          <div class="field"><label>Şehir</label><select name="city" id="registerCity" required></select></div>
+          <div class="field full"><label>Discord kullanıcı adı</label><input class="input" name="discord" required placeholder="kullaniciadi#0000 veya @kullanici" /></div>
+        </div>
+      </div>
+      <div class="step-panel" data-step="2">
+        <div class="form-grid">
+          <div class="field"><label>Ana oyun</label><select name="game" id="registerGame" required></select></div>
+          <div class="field"><label>Rank</label><select name="rank" id="registerRank" required></select></div>
+          <div class="field"><label>Rol</label><select name="gameRole" id="registerRole" required></select></div>
+          <div class="field"><label>Platform</label><select name="platform" id="registerPlatform" required></select></div>
+        </div>
+      </div>
+      <div class="step-panel" data-step="3">
+        <div class="form-grid">
+          <div class="field"><label>Mikrofon</label><select name="mic" id="registerMic" required></select></div>
+          <div class="field"><label>Aktiflik</label><select name="availability" id="registerAvailability" required></select></div>
+          <div class="field"><label>Takım durumu</label><select name="teamStatus" id="registerTeamStatus" required></select></div>
+          <div class="field"><label>Dil</label><input class="input" name="language" value="Türkçe" /></div>
+          <div class="field full"><label>Kısa profil açıklaması</label><textarea name="bio" maxlength="260" placeholder="Oyun tarzın, hedefin, takım beklentin..."></textarea></div>
+        </div>
+      </div>
+      <div class="card-row" style="margin-top:6px"><button class="btn" type="button" id="prevStep">Geri</button><button class="btn primary" type="button" id="nextStep">Devam</button><button class="btn success hide" type="submit" id="submitRegister">Kaydı Tamamla</button></div>
+      <p class="small-text">Kaydın tamamlanınca durumun <strong>pending</strong> olur. Admin onayından sonra profilin yayınlanır.</p>
+    </form>
+  </section>
+</main>
+<div id="toast" class="toast"></div>
+<script type="module" src="./assets/js/login.js"></script>
+</body>
+</html>

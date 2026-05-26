@@ -1,104 +1,55 @@
 <!doctype html>
 <html lang="tr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EsporGO Gizli Admin Paneli</title>
-  <meta name="robots" content="noindex,nofollow" />
-  <style>
-:root{
-  --bg:#050814;--bg2:#07111f;--panel:rgba(13,22,42,.78);--panel2:rgba(21,34,63,.72);--line:rgba(139,171,255,.19);--text:#edf3ff;--muted:#93a4c6;--soft:#c5d2ee;--primary:#6c5cff;--primary2:#00e1ff;--danger:#ff4d7d;--success:#37f5a2;--warn:#ffd166;--shadow:0 30px 80px rgba(0,0,0,.45);--radius:24px;--radius2:16px;
-}
-*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:radial-gradient(circle at top left,rgba(108,92,255,.25),transparent 34%),radial-gradient(circle at 80% 10%,rgba(0,225,255,.17),transparent 28%),linear-gradient(180deg,var(--bg),#03050b 80%);color:var(--text);min-height:100vh;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:58px 58px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.9),transparent 80%);pointer-events:none;z-index:-1}.noise{position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");z-index:-1}
-a{color:inherit;text-decoration:none}.container{width:min(1180px,calc(100% - 32px));margin:auto}.topbar{position:sticky;top:0;z-index:40;background:rgba(5,8,20,.74);backdrop-filter:blur(22px);border-bottom:1px solid var(--line)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.2px}.logo{width:42px;height:42px;border-radius:14px;background:conic-gradient(from 180deg,var(--primary),var(--primary2),var(--success),var(--primary));box-shadow:0 0 36px rgba(0,225,255,.28);position:relative}.logo:after{content:"GO";position:absolute;inset:3px;border-radius:12px;background:#061023;display:grid;place-items:center;font-size:12px;color:#fff;font-weight:950}.navlinks{display:flex;gap:18px;align-items:center;color:var(--muted);font-size:14px}.navlinks a:hover{color:var(--text)}.actions{display:flex;gap:10px;align-items:center}.btn{border:0;border-radius:15px;padding:12px 16px;font-weight:800;color:var(--text);background:rgba(255,255,255,.08);border:1px solid var(--line);cursor:pointer;transition:.2s transform,.2s background,.2s border-color;display:inline-flex;gap:8px;align-items:center;justify-content:center}.btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25)}.btn.primary{background:linear-gradient(135deg,var(--primary),#8d4dff 50%,var(--primary2));border:0;box-shadow:0 16px 40px rgba(108,92,255,.33)}.btn.success{background:rgba(55,245,162,.12);border-color:rgba(55,245,162,.35);color:#caffeb}.btn.danger{background:rgba(255,77,125,.1);border-color:rgba(255,77,125,.35);color:#ffd7e1}.small{padding:9px 12px;border-radius:12px;font-size:13px}.hamb{display:none}.hero{padding:76px 0 38px}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}.badge{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;background:rgba(0,225,255,.08);border:1px solid rgba(0,225,255,.18);color:#bff7ff;font-weight:800;font-size:13px;margin-bottom:18px}.h1{font-size:clamp(42px,7vw,82px);line-height:.94;margin:0 0 18px;letter-spacing:-3px}.grad{background:linear-gradient(90deg,#fff,var(--primary2),#bfa7ff);-webkit-background-clip:text;background-clip:text;color:transparent}.lead{color:var(--soft);font-size:18px;line-height:1.65;max-width:720px}.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}.metric{background:rgba(255,255,255,.055);border:1px solid var(--line);border-radius:18px;padding:16px}.metric b{display:block;font-size:24px}.metric span{color:var(--muted);font-size:13px}.visual{position:relative;border:1px solid var(--line);border-radius:32px;background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.03));box-shadow:var(--shadow);padding:18px;overflow:hidden}.visual:before{content:"";position:absolute;inset:-120px;background:conic-gradient(from 20deg,transparent,rgba(0,225,255,.18),transparent,rgba(108,92,255,.25),transparent);animation:spin 10s linear infinite}.visual>*{position:relative}@keyframes spin{to{transform:rotate(360deg)}}.terminal{background:rgba(2,6,18,.82);border:1px solid rgba(255,255,255,.12);border-radius:22px;overflow:hidden}.terminal-top{height:46px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:0 14px;color:var(--muted);font-size:13px}.dots{display:flex;gap:7px}.dots i{width:10px;height:10px;border-radius:50%;display:block;background:#ff5f57}.dots i:nth-child(2){background:#ffbd2e}.dots i:nth-child(3){background:#28c840}.match-card{padding:18px;border-bottom:1px solid rgba(255,255,255,.07)}.match-card:last-child{border-bottom:0}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.tag{padding:6px 9px;border-radius:999px;background:rgba(108,92,255,.13);border:1px solid rgba(108,92,255,.24);color:#d8d3ff;font-size:12px;font-weight:800}.tag.cyan{background:rgba(0,225,255,.1);border-color:rgba(0,225,255,.25);color:#bff7ff}.tag.green{background:rgba(55,245,162,.11);border-color:rgba(55,245,162,.27);color:#caffeb}.tag.red{background:rgba(255,77,125,.1);border-color:rgba(255,77,125,.27);color:#ffd8e2}.section{padding:34px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:16px}.kicker{color:var(--primary2);font-weight:950;font-size:13px;letter-spacing:.16em;text-transform:uppercase}.title{font-size:clamp(26px,4vw,46px);line-height:1;margin:8px 0 0;letter-spacing:-1.6px}.sub{color:var(--muted);line-height:1.6}.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);backdrop-filter:blur(22px)}.panel.pad{padding:20px}.grid{display:grid;gap:16px}.grid.two{grid-template-columns:repeat(2,1fr)}.grid.three{grid-template-columns:repeat(3,1fr)}.filters{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr .8fr;gap:10px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-size:12px;color:var(--muted);font-weight:800}.input,select,textarea{width:100%;padding:13px 13px;border-radius:14px;background:rgba(5,10,25,.86);border:1px solid rgba(139,171,255,.2);color:var(--text);outline:none;font:inherit}.input:focus,select:focus,textarea:focus{border-color:rgba(0,225,255,.55);box-shadow:0 0 0 4px rgba(0,225,255,.08)}textarea{min-height:104px;resize:vertical}.players{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}.card{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.035));border:1px solid var(--line);border-radius:22px;padding:17px;position:relative;overflow:hidden}.card:before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--primary2),var(--success));opacity:.75}.avatar{width:46px;height:46px;border-radius:16px;background:linear-gradient(135deg,var(--primary),var(--primary2));display:grid;place-items:center;font-weight:950}.card h3{margin:0;font-size:18px}.muted{color:var(--muted)}.card-meta{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0}.divider{height:1px;background:var(--line);margin:14px 0}.empty{padding:34px;text-align:center;color:var(--muted);border:1px dashed rgba(139,171,255,.25);border-radius:22px;background:rgba(255,255,255,.035)}.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.span2{grid-column:span 2}.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(15px);z-index:90;display:none;align-items:center;justify-content:center;padding:18px}.modal.open{display:flex}.modal-card{width:min(860px,100%);max-height:91vh;overflow:auto;background:#071020;border:1px solid var(--line);border-radius:26px;box-shadow:0 40px 90px rgba(0,0,0,.55)}.modal-head{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(7,16,32,.92);backdrop-filter:blur(20px);z-index:2}.tabs{display:flex;gap:8px;padding:16px 20px 0}.tab{padding:11px 14px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.055);cursor:pointer;font-weight:850;color:var(--muted)}.tab.active{color:#fff;background:linear-gradient(135deg,rgba(108,92,255,.35),rgba(0,225,255,.14));border-color:rgba(0,225,255,.35)}.tab-pane{display:none;padding:18px 20px 22px}.tab-pane.active{display:block}.toast{position:fixed;right:18px;bottom:18px;z-index:120;background:rgba(7,16,32,.95);border:1px solid var(--line);border-radius:16px;padding:14px 15px;box-shadow:var(--shadow);display:none;max-width:360px}.toast.show{display:block}.notice{display:none;margin:18px 0;padding:14px 16px;border-radius:18px;border:1px solid rgba(255,209,102,.35);background:rgba(255,209,102,.1);color:#ffe8aa}.notice.show{display:block}.profile-pill{display:none;align-items:center;gap:10px}.profile-pill.show{display:flex}.status-dot{width:9px;height:9px;border-radius:50%;background:var(--success);box-shadow:0 0 18px var(--success)}.status-dot.pending{background:var(--warn);box-shadow:0 0 18px var(--warn)}.teams{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:16px}.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.step{padding:16px;border-radius:20px;background:rgba(255,255,255,.055);border:1px solid var(--line)}.step b{display:block;font-size:22px;color:var(--primary2)}.footer{padding:40px 0;color:var(--muted);border-top:1px solid var(--line);margin-top:30px}.mobile-only{display:none}@media(max-width:980px){.hero-grid,.grid.two,.grid.three{grid-template-columns:1fr}.players,.teams{grid-template-columns:repeat(2,1fr)}.filters{grid-template-columns:1fr 1fr}.timeline{grid-template-columns:1fr 1fr}.navlinks{display:none}.hamb{display:inline-flex}}@media(max-width:640px){.container{width:min(100% - 22px,1180px)}.nav{height:68px}.actions .btn:not(.primary){display:none}.hero{padding-top:38px}.metrics,.players,.teams,.filters,.form-grid,.timeline{grid-template-columns:1fr}.span2{grid-column:span 1}.h1{letter-spacing:-1.4px}.mobile-only{display:block}.section-head{display:block}.modal-card{border-radius:20px}}
-
-.admin-shell{display:grid;grid-template-columns:280px 1fr;min-height:100vh}.side{border-right:1px solid var(--line);background:rgba(5,8,20,.8);padding:22px;position:sticky;top:0;height:100vh}.side .brand{margin-bottom:26px}.side-nav{display:grid;gap:8px}.side-nav button{justify-content:flex-start}.admin-main{padding:28px}.admin-top{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:20px}.dash{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}.table-list{display:grid;gap:12px}.admin-section{display:none}.admin-section.active{display:block}.login-wrap{min-height:100vh;display:grid;place-items:center;padding:20px}.login-box{width:min(520px,100%)}.admin-only{display:none}@media(max-width:900px){.admin-shell{grid-template-columns:1fr}.side{position:relative;height:auto}.admin-main{padding:16px}.dash{grid-template-columns:1fr 1fr}}@media(max-width:560px){.dash{grid-template-columns:1fr}}
-</style>
-</head>
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Gizli Admin Paneli | EsporGO V3</title><meta name="robots" content="noindex,nofollow" /><link rel="stylesheet" href="./assets/css/style.css" /></head>
 <body>
-<div class="noise"></div>
-<div id="adminLogin" class="login-wrap">
-  <div class="panel pad login-box">
-    <div class="brand"><span class="logo"></span><span>Espor<span class="grad">GO</span> Admin</span></div>
-    <p class="muted">Bu panel ana sitede görünmez. Sadece Firestore içinde <b>role: admin</b> olan hesaplar erişebilir.</p>
-    <div id="setupNotice" class="notice"><b>Firebase config eksik:</b> Önce firebase-config.js dosyasını doldur.</div>
-    <form id="adminLoginForm" class="form-grid">
-      <div class="field span2"><label>E-posta</label><input class="input" id="adminEmail" type="email" required /></div>
-      <div class="field span2"><label>Şifre</label><input class="input" id="adminPassword" type="password" required /></div>
-      <button class="btn primary span2" type="submit">Admin girişi</button>
-      <a class="btn span2" href="./index.html">Siteye dön</a>
-    </form>
-  </div>
-</div>
-<div id="adminApp" class="admin-shell" style="display:none">
-  <aside class="side">
-    <a class="brand" href="./index.html"><span class="logo"></span><span>Espor<span class="grad">GO</span></span></a>
-    <div class="side-nav">
-      <button class="btn active" data-admin-tab="playersPending">Oyuncu başvuruları</button>
-      <button class="btn" data-admin-tab="playersPublic">Yayındaki oyuncular</button>
-      <button class="btn" data-admin-tab="teamsPending">Takım başvuruları</button>
-      <button class="btn" data-admin-tab="teamsPublic">Yayındaki takımlar</button>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="./index.html"><span class="logo-mark"></span><span class="brand-text"><strong>EsporGO</strong><span>Admin Core</span></span></a>
+    <div class="side-nav" id="adminNav">
+      <button class="btn active" data-tab="adminLogin">Admin Giriş</button>
+      <button class="btn" data-tab="adminOverview">Özet</button>
+      <button class="btn" data-tab="pendingPlayers">Oyuncu Başvuruları</button>
+      <button class="btn" data-tab="publicPlayers">Yayındaki Oyuncular</button>
+      <button class="btn" data-tab="pendingTeams">Takım Başvuruları</button>
+      <button class="btn" data-tab="publicTeams">Yayındaki Takımlar</button>
+      <button class="btn" data-tab="tournamentRequests">Turnuva Talepleri</button>
+      <button class="btn" data-tab="reports">Raporlar</button>
+      <a class="btn" href="./index.html">Siteye Dön</a>
       <button class="btn danger" id="adminLogout">Çıkış</button>
     </div>
   </aside>
-  <main class="admin-main">
-    <div class="admin-top"><div><div class="kicker">Gizli kontrol merkezi</div><h1 class="title">Admin Paneli</h1><p class="muted">Başvuruları onayla, reddet, yayından kaldır veya doğrulanmış yap.</p></div><a class="btn" href="./index.html">Siteyi aç</a></div>
-    <div class="dash">
-      <div class="metric"><b id="statPendingPlayers">0</b><span>Oyuncu başvurusu</span></div><div class="metric"><b id="statPublicPlayers">0</b><span>Yayındaki oyuncu</span></div><div class="metric"><b id="statPendingTeams">0</b><span>Takım başvurusu</span></div><div class="metric"><b id="statPublicTeams">0</b><span>Yayındaki takım</span></div>
-    </div>
-    <section id="playersPending" class="admin-section active"><div class="panel pad"><h2>Oyuncu başvuruları</h2><div id="pendingPlayersList" class="table-list"></div></div></section>
-    <section id="playersPublic" class="admin-section"><div class="panel pad"><h2>Yayındaki oyuncular</h2><div id="publicPlayersList" class="table-list"></div></div></section>
-    <section id="teamsPending" class="admin-section"><div class="panel pad"><h2>Takım başvuruları</h2><div id="pendingTeamsList" class="table-list"></div></div></section>
-    <section id="teamsPublic" class="admin-section"><div class="panel pad"><h2>Yayındaki takımlar</h2><div id="publicTeamsList" class="table-list"></div></div></section>
+  <main class="main-area">
+    <div class="top-area"><div><div class="kicker">Gizli yönetim alanı</div><h1 class="title">EsporGO Admin Paneli</h1><p class="muted">Bu sayfa ana sitede görünmez. Yetkisiz hesaplar veri okuyamaz ve işlem yapamaz.</p></div><span id="adminStatus" class="badge-mini warn">Kontrol ediliyor</span></div>
+
+    <section id="adminLogin" class="admin-section active">
+      <form id="adminLoginForm" class="panel pad grid" style="max-width:560px">
+        <h2>Admin girişi</h2>
+        <p class="small-text">Admin yetkisi olmayan hesap panele alınmaz. İlk admin hesabını Firebase Console > Firestore > users içinden role: admin yapmalısın.</p>
+        <div class="field"><label>E-posta</label><input class="input" name="email" type="email" required /></div>
+        <div class="field"><label>Şifre</label><input class="input" name="password" type="password" required /></div>
+        <button class="btn primary" type="submit">Admin Girişi Yap</button>
+      </form>
+    </section>
+
+    <section id="adminOverview" class="admin-section">
+      <div class="grid four">
+        <div class="metric-card"><strong id="statPendingPlayers">0</strong><span>Bekleyen oyuncu</span></div>
+        <div class="metric-card"><strong id="statPublicPlayers">0</strong><span>Yayındaki oyuncu</span></div>
+        <div class="metric-card"><strong id="statPendingTeams">0</strong><span>Bekleyen takım</span></div>
+        <div class="metric-card"><strong id="statReports">0</strong><span>Açık rapor</span></div>
+      </div>
+      <div class="panel pad" style="margin-top:16px"><h2>Yönetim notları</h2><p class="small-text">Oyuncu onaylandığında users/{uid} status approved olur ve publicPlayers/{uid} içine yayınlanır. Takımlar da teamRequests içinden publicTeams koleksiyonuna aktarılır.</p></div>
+    </section>
+
+    <section id="pendingPlayers" class="admin-section"><div class="panel pad"><h2>Oyuncu başvuruları</h2><div id="pendingPlayersList" class="table-list"></div></div></section>
+    <section id="publicPlayers" class="admin-section"><div class="panel pad"><h2>Yayındaki oyuncular</h2><div id="publicPlayersList" class="table-list"></div></div></section>
+    <section id="pendingTeams" class="admin-section"><div class="panel pad"><h2>Takım başvuruları</h2><div id="pendingTeamsList" class="table-list"></div></div></section>
+    <section id="publicTeams" class="admin-section"><div class="panel pad"><h2>Yayındaki takımlar</h2><div id="publicTeamsList" class="table-list"></div></div></section>
+    <section id="tournamentRequests" class="admin-section"><div class="panel pad"><h2>Turnuva talepleri</h2><div id="tournamentRequestsList" class="table-list"></div></div></section>
+    <section id="reports" class="admin-section"><div class="panel pad"><h2>Raporlar</h2><div id="reportsList" class="table-list"></div></div></section>
   </main>
 </div>
 <div id="toast" class="toast"></div>
-<script type="module">
-import { firebaseConfig } from './firebase-config.js';
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js';
-import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js';
-import { getFirestore, collection, doc, getDoc, setDoc, updateDoc, deleteDoc, onSnapshot, serverTimestamp, query, orderBy } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js';
-const qs=s=>document.querySelector(s); const qsa=s=>[...document.querySelectorAll(s)];
-const validConfig = firebaseConfig && firebaseConfig.apiKey && !String(firebaseConfig.apiKey).includes('BURAYA');
-let app,auth,db,currentUser,isAdmin=false,pendingPlayers=[],publicPlayers=[],pendingTeams=[],publicTeams=[];
-function toast(msg){ const el=qs('#toast'); el.textContent=msg; el.classList.add('show'); setTimeout(()=>el.classList.remove('show'),4200); }
-function esc(str=''){ return String(str).replace(/[&<>'"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[m])); }
-function safePlayer(p){ return { uid:p.uid, playerName:p.playerName||'', city:p.city||'', game:p.game||'', rank:p.rank||'', gameRole:p.gameRole||'', platform:p.platform||'', availability:p.availability||'', mic:p.mic||'', discord:p.discord||'', teamStatus:p.teamStatus||'', bio:p.bio||'', verified:!!p.verified, createdAt:p.createdAt||serverTimestamp(), approvedAt:serverTimestamp() }; }
-function safeTeam(t,id){ return { requestId:id, teamName:t.teamName||'', game:t.game||'', wantedRole:t.wantedRole||'', minRank:t.minRank||'', city:t.city||'', contact:t.contact||'', description:t.description||'', ownerUid:t.ownerUid||'', createdAt:t.createdAt||serverTimestamp(), approvedAt:serverTimestamp() }; }
-function playerCard(p, pending=false){ return `<article class="card"><div class="row"><div><h3>${esc(p.playerName||p.email)}</h3><div class="muted">${esc(p.email||'')} · ${esc(p.city||'')}</div></div><span class="tag ${pending?'':'green'}">${esc(p.status||'published')}</span></div><div class="card-meta"><span class="tag cyan">${esc(p.game)}</span><span class="tag">${esc(p.rank)}</span><span class="tag green">${esc(p.gameRole)}</span><span class="tag">${esc(p.mic)}</span></div><p class="muted">${esc(p.bio||'Açıklama yok.')}</p><div class="divider"></div><div class="row" style="flex-wrap:wrap;justify-content:flex-start">${pending?`<button class="btn success small" data-approve-player="${esc(p.uid)}">Onayla ve yayınla</button><button class="btn danger small" data-reject-player="${esc(p.uid)}">Reddet</button>`:`<button class="btn small" data-verify-player="${esc(p.uid)}">Doğrulanmış değiştir</button><button class="btn danger small" data-remove-player="${esc(p.uid)}">Yayından kaldır</button>`}</div></article>`; }
-function teamCard(t,pending=false){ return `<article class="card"><div class="row"><div><h3>${esc(t.teamName)}</h3><div class="muted">${esc(t.game)} · ${esc(t.city)}</div></div><span class="tag ${pending?'':'green'}">${esc(t.status||'published')}</span></div><div class="card-meta"><span class="tag cyan">${esc(t.wantedRole)}</span><span class="tag">Min: ${esc(t.minRank)}</span><span class="tag green">${esc(t.contact)}</span></div><p class="muted">${esc(t.description)}</p><div class="divider"></div><div class="row" style="flex-wrap:wrap;justify-content:flex-start">${pending?`<button class="btn success small" data-approve-team="${esc(t.id)}">Onayla ve yayınla</button><button class="btn danger small" data-reject-team="${esc(t.id)}">Reddet</button>`:`<button class="btn danger small" data-remove-team="${esc(t.id)}">Yayından kaldır</button>`}</div></article>`; }
-function empty(text){ return `<div class="empty">${text}</div>`; }
-function render(){
-  qs('#pendingPlayersList').innerHTML=pendingPlayers.length?pendingPlayers.map(p=>playerCard(p,true)).join(''):empty('Bekleyen oyuncu başvurusu yok.');
-  qs('#publicPlayersList').innerHTML=publicPlayers.length?publicPlayers.map(p=>playerCard(p,false)).join(''):empty('Yayında oyuncu yok.');
-  qs('#pendingTeamsList').innerHTML=pendingTeams.length?pendingTeams.map(t=>teamCard(t,true)).join(''):empty('Bekleyen takım başvurusu yok.');
-  qs('#publicTeamsList').innerHTML=publicTeams.length?publicTeams.map(t=>teamCard(t,false)).join(''):empty('Yayında takım yok.');
-  qs('#statPendingPlayers').textContent=pendingPlayers.length; qs('#statPublicPlayers').textContent=publicPlayers.length; qs('#statPendingTeams').textContent=pendingTeams.length; qs('#statPublicTeams').textContent=publicTeams.length;
-}
-async function approvePlayer(uid){ const p=pendingPlayers.find(x=>x.uid===uid); if(!p) return; await updateDoc(doc(db,'users',uid),{status:'approved',approvedAt:serverTimestamp(),updatedAt:serverTimestamp()}); await setDoc(doc(db,'publicPlayers',uid),safePlayer({...p,status:'approved'})); toast('Oyuncu yayınlandı.'); }
-async function rejectPlayer(uid){ await updateDoc(doc(db,'users',uid),{status:'rejected',updatedAt:serverTimestamp()}); await deleteDoc(doc(db,'publicPlayers',uid)).catch(()=>{}); toast('Oyuncu reddedildi/yayından kaldırıldı.'); }
-async function verifyPlayer(uid){ const p=publicPlayers.find(x=>x.uid===uid || x.id===uid); if(!p) return; const next=!p.verified; await updateDoc(doc(db,'publicPlayers',uid),{verified:next}); await updateDoc(doc(db,'users',uid),{verified:next}).catch(()=>{}); toast('Doğrulama durumu güncellendi.'); }
-async function removePlayer(uid){ await deleteDoc(doc(db,'publicPlayers',uid)); await updateDoc(doc(db,'users',uid),{status:'hidden',updatedAt:serverTimestamp()}).catch(()=>{}); toast('Oyuncu vitrinden kaldırıldı.'); }
-async function approveTeam(id){ const t=pendingTeams.find(x=>x.id===id); if(!t) return; await setDoc(doc(db,'publicTeams',id),safeTeam(t,id)); await updateDoc(doc(db,'teamRequests',id),{status:'approved',approvedAt:serverTimestamp()}); toast('Takım ilanı yayınlandı.'); }
-async function rejectTeam(id){ await updateDoc(doc(db,'teamRequests',id),{status:'rejected',updatedAt:serverTimestamp()}); await deleteDoc(doc(db,'publicTeams',id)).catch(()=>{}); toast('Takım ilanı reddedildi.'); }
-async function removeTeam(id){ await deleteDoc(doc(db,'publicTeams',id)); await updateDoc(doc(db,'teamRequests',id),{status:'hidden',updatedAt:serverTimestamp()}).catch(()=>{}); toast('Takım ilanı yayından kaldırıldı.'); }
-function bind(){
- qs('#adminLoginForm').onsubmit=async e=>{e.preventDefault(); if(!validConfig){toast('Firebase config eksik.');return;} await signInWithEmailAndPassword(auth,qs('#adminEmail').value.trim(),qs('#adminPassword').value);};
- qs('#adminLogout').onclick=()=>signOut(auth);
- qsa('[data-admin-tab]').forEach(btn=>btn.onclick=()=>{qsa('[data-admin-tab]').forEach(x=>x.classList.remove('primary'));qsa('.admin-section').forEach(x=>x.classList.remove('active'));btn.classList.add('primary');qs('#'+btn.dataset.adminTab).classList.add('active');});
- document.body.addEventListener('click', e=>{ const b=e.target.closest('button'); if(!b) return; const d=b.dataset; if(d.approvePlayer) approvePlayer(d.approvePlayer).catch(err=>toast(err.message)); if(d.rejectPlayer) rejectPlayer(d.rejectPlayer).catch(err=>toast(err.message)); if(d.verifyPlayer) verifyPlayer(d.verifyPlayer).catch(err=>toast(err.message)); if(d.removePlayer) removePlayer(d.removePlayer).catch(err=>toast(err.message)); if(d.approveTeam) approveTeam(d.approveTeam).catch(err=>toast(err.message)); if(d.rejectTeam) rejectTeam(d.rejectTeam).catch(err=>toast(err.message)); if(d.removeTeam) removeTeam(d.removeTeam).catch(err=>toast(err.message)); });
-}
-async function checkAdmin(user){ if(!user) return false; const snap=await getDoc(doc(db,'users',user.uid)); return snap.exists() && snap.data().role === 'admin'; }
-function startListeners(){
- onSnapshot(query(collection(db,'users'),orderBy('createdAt','desc')), snap=>{ const all=snap.docs.map(d=>({id:d.id,...d.data()})); pendingPlayers=all.filter(x=>x.status==='pending'); render(); });
- onSnapshot(query(collection(db,'publicPlayers'),orderBy('createdAt','desc')), snap=>{ publicPlayers=snap.docs.map(d=>({id:d.id,...d.data()})); render(); });
- onSnapshot(query(collection(db,'teamRequests'),orderBy('createdAt','desc')), snap=>{ const all=snap.docs.map(d=>({id:d.id,...d.data()})); pendingTeams=all.filter(x=>x.status==='pending'); render(); });
- onSnapshot(query(collection(db,'publicTeams'),orderBy('createdAt','desc')), snap=>{ publicTeams=snap.docs.map(d=>({id:d.id,...d.data()})); render(); });
-}
-bind();
-if(!validConfig){ qs('#setupNotice').classList.add('show'); }
-else { app=initializeApp(firebaseConfig); auth=getAuth(app); db=getFirestore(app); onAuthStateChanged(auth, async user=>{ currentUser=user; isAdmin=await checkAdmin(user); qs('#adminLogin').style.display=isAdmin?'none':'grid'; qs('#adminApp').style.display=isAdmin?'grid':'none'; if(user && !isAdmin) toast('Bu hesap admin yetkisine sahip değil.'); if(isAdmin) startListeners(); }); }
-</script>
+<script type="module" src="./assets/js/admin.js"></script>
 </body>
 </html>
