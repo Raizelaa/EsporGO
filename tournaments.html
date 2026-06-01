@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="tr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Turnuvalar | EsporGO V4</title><link rel="stylesheet" href="./style.css"></head>
+<body data-page="tournaments">
+<header class="site-header">
+  <div class="container navbar">
+    <a class="logo" href="index.html" aria-label="EsporGO Ana Sayfa">
+      <span class="logo-mark">EG</span>
+      <span>EsporGO <small>Türkiye e-spor platformu</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Ana menü">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="players.html">Oyuncu Bul</a>
+      <a href="teams.html">Takımlar</a>
+      <a href="tournaments.html">Turnuvalar</a>
+      <a href="referees.html">Hakemler</a>
+      <a href="dashboard.html">Panelim</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn ghost" data-auth="out" href="login.html">Giriş</a>
+      <a class="btn primary" data-auth="out" href="login.html#register">Kayıt ol</a>
+      <a class="btn ghost" data-auth="in" href="dashboard.html" style="display:none"><span data-user-name>Oyuncu</span></a>
+      <button class="btn ghost" data-auth="in" id="logoutBtn" style="display:none">Çıkış</button>
+      <button class="btn ghost mobile-toggle" type="button">Menü</button>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="page-title"><div class="container"><span class="eyebrow">🏆 Turnuva operasyon merkezi</span><h1>Kayıt, format ve hakem akışıyla <span class="gradient-text">profesyonel turnuvalar.</span></h1><p class="lead">Turnuvaları oyun, format, takım limiti, ödül, hakem ihtiyacı ve kayıt durumuyla yönetilebilir hale getir.</p></div></section>
+  <section class="section compact"><div class="container filter-panel"><form id="tournamentFilters" class="filter-grid"><div class="field"><label>Oyun</label><select name="game" data-games></select></div><div class="field"><label>Kategori</label><select name="category" data-categories></select></div><div class="field"><label>Durum</label><select name="status"><option value="">Tümü</option><option>Kayıt Açık</option><option>Yakında</option><option>Devam Ediyor</option><option>Bitti</option></select></div><div class="field"><label>Arama</label><input class="input" name="search" placeholder="Turnuva adı, ödül..." /></div><button class="btn primary" type="submit">Filtrele</button><button class="btn ghost" type="button" id="clearTournamentFilters">Temizle</button></form></div></section>
+  <section class="section compact"><div class="container grid cards-2"><div><div class="section-heading"><div><h2>Turnuva vitrini</h2><p>Onaylı ve yayınlanmış organizasyonlar.</p></div></div><div id="tournamentsGrid" class="grid"><div class="skeleton"></div></div></div><aside class="form-panel"><h2>Turnuva talebi oluştur</h2><p class="lead" style="font-size:15px">Talebin admin tarafından kontrol edilip yayına alınır.</p><form id="tournamentCreateForm" class="form-grid"><div class="field"><label>Turnuva adı</label><input class="input" name="name" required></div><div class="field"><label>Oyun</label><select name="game" data-games required></select></div><div class="field"><label>Format</label><select name="format" required><option value="">Seç</option><option>1v1</option><option>2v2</option><option>3v3</option><option>5v5</option><option>Takım</option><option>Solo</option><option>Duo</option></select></div><div class="field"><label>Takım limiti</label><input class="input" name="teamLimit" type="number" min="2" placeholder="16"></div><div class="field"><label>Başlangıç</label><input class="input" name="startDate" type="date" required></div><div class="field"><label>Bitiş</label><input class="input" name="endDate" type="date"></div><div class="field"><label>Ödül</label><input class="input" name="prize" placeholder="Duyurulacak"></div><div class="field"><label>Hakem ihtiyacı</label><input class="input" name="refereeNeed" type="number" min="0" placeholder="2"></div><div class="field full"><label>Açıklama / Kurallar</label><textarea name="description" required></textarea></div><button class="btn primary block field full" type="submit">Turnuva talebini gönder</button></form></aside></div></section>
+</main>
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>EsporGO</strong>
+      <p>Oyuncu, takım, turnuva ve hakemlik akışını tek platformda buluşturur.</p>
+    </div>
+    <div class="badges">
+      <span class="badge">Firebase Auth</span>
+      <span class="badge">Firestore</span>
+      <span class="badge">GitHub Pages</span>
+      <span class="badge success">Admin onaylı</span>
+    </div>
+  </div>
+</footer>
+<div class="toast-region" aria-live="polite"></div>
+<script type="module" src="./app.js"></script>
+</body></html>

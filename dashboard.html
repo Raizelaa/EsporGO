@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="tr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Panelim | EsporGO V4</title><link rel="stylesheet" href="./style.css"></head>
+<body data-page="dashboard">
+<header class="site-header">
+  <div class="container navbar">
+    <a class="logo" href="index.html" aria-label="EsporGO Ana Sayfa">
+      <span class="logo-mark">EG</span>
+      <span>EsporGO <small>Türkiye e-spor platformu</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Ana menü">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="players.html">Oyuncu Bul</a>
+      <a href="teams.html">Takımlar</a>
+      <a href="tournaments.html">Turnuvalar</a>
+      <a href="referees.html">Hakemler</a>
+      <a href="dashboard.html">Panelim</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn ghost" data-auth="out" href="login.html">Giriş</a>
+      <a class="btn primary" data-auth="out" href="login.html#register">Kayıt ol</a>
+      <a class="btn ghost" data-auth="in" href="dashboard.html" style="display:none"><span data-user-name>Oyuncu</span></a>
+      <button class="btn ghost" data-auth="in" id="logoutBtn" style="display:none">Çıkış</button>
+      <button class="btn ghost mobile-toggle" type="button">Menü</button>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="page-title"><div class="container"><span class="eyebrow">📊 Kullanıcı paneli</span><h1>Profilini ve başvurularını <span class="gradient-text">tek yerden yönet.</span></h1><p class="lead">Profil düzenleme, başvurular, bildirimler, takım/turnuva/hakem talepleri ve onay durumu bu panelde.</p></div></section>
+  <section class="section compact"><div class="container"><div id="dashboardGate"></div><div id="dashboardContent" class="dashboard-layout" style="display:none"><aside class="card sidebar-card"><div id="profileSummary"></div><div class="side-menu"><a href="players.html">Oyuncu bul</a><a href="teams.html">Takım ilanı aç</a><a href="tournaments.html">Turnuva talebi</a><a href="referees.html">Hakem başvurusu</a></div></aside><div class="grid"><section class="form-panel"><h2>Profilimi düzenle</h2><form id="profileForm" class="form-grid"><div class="field"><label>Oyuncu adı</label><input class="input" name="gamerTag"></div><div class="field"><label>Discord</label><input class="input" name="discord"></div><div class="field"><label>Şehir</label><select name="city" data-cities></select></div><div class="field"><label>Oyun</label><select name="game" id="profileGame" data-games></select></div><div class="field"><label>Rank</label><select name="rank" id="profileRank"></select></div><div class="field"><label>Rol</label><select name="roleInGame" id="profileRole"></select></div><div class="field"><label>Platform</label><select name="platform" data-platforms></select></div><div class="field"><label>Aktiflik</label><input class="input" name="activeHours"></div><div class="field full"><label>Açıklama</label><textarea name="bio"></textarea></div><button class="btn primary field full" type="submit">Profili güncelle</button></form></section><section><div class="section-heading"><div><h2>Bildirimler</h2><p>Admin kararları ve sistem bilgilendirmeleri.</p></div></div><div id="notificationsList" class="grid"></div></section><section><div class="section-heading"><div><h2>Başvurularım</h2><p>Takım, turnuva ve hakemlik taleplerin.</p></div></div><div id="myRequests" class="grid"></div></section></div></div></div></section>
+</main>
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>EsporGO</strong>
+      <p>Oyuncu, takım, turnuva ve hakemlik akışını tek platformda buluşturur.</p>
+    </div>
+    <div class="badges">
+      <span class="badge">Firebase Auth</span>
+      <span class="badge">Firestore</span>
+      <span class="badge">GitHub Pages</span>
+      <span class="badge success">Admin onaylı</span>
+    </div>
+  </div>
+</footer>
+<div class="toast-region" aria-live="polite"></div>
+<script type="module" src="./app.js"></script>
+</body></html>

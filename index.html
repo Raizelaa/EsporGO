@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EsporGO V4 | Takımını Bul, Turnuvaya Gir</title>
+  <meta name="description" content="EsporGO; Türkiye odaklı oyuncu, takım, turnuva ve e-spor hakemliği platformudur.">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body data-page="home">
+<header class="site-header">
+  <div class="container navbar">
+    <a class="logo" href="index.html" aria-label="EsporGO Ana Sayfa">
+      <span class="logo-mark">EG</span>
+      <span>EsporGO <small>Türkiye e-spor platformu</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Ana menü">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="players.html">Oyuncu Bul</a>
+      <a href="teams.html">Takımlar</a>
+      <a href="tournaments.html">Turnuvalar</a>
+      <a href="referees.html">Hakemler</a>
+      <a href="dashboard.html">Panelim</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn ghost" data-auth="out" href="login.html">Giriş</a>
+      <a class="btn primary" data-auth="out" href="login.html#register">Kayıt ol</a>
+      <a class="btn ghost" data-auth="in" href="dashboard.html" style="display:none"><span data-user-name>Oyuncu</span></a>
+      <button class="btn ghost" data-auth="in" id="logoutBtn" style="display:none">Çıkış</button>
+      <button class="btn ghost mobile-toggle" type="button">Menü</button>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">⚡ EsporGO V4 Command Platform</span>
+        <h1>Takımını bul. <span class="gradient-text">Turnuvaya gir.</span> Oyuncu kariyerini başlat.</h1>
+        <p class="lead">Oyuncu profili, takım ilanı, turnuva talebi, hakem başvurusu, güven puanı, admin onayı ve profesyonel eşleştirme sistemi tek platformda.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="login.html#register">Hemen kayıt ol</a>
+          <a class="btn ghost" href="players.html">Oyuncu keşfet</a>
+          <a class="btn ghost" href="teams.html">Takım ilanı aç</a>
+        </div>
+        <div class="hero-meta">
+          <span>81 il desteği</span><span>Oyuna özel rank motoru</span><span>Gizli admin paneli</span><span>Hakemlik modülü</span>
+        </div>
+      </div>
+      <aside class="command-card">
+        <div class="command-inner">
+          <div class="live-bar"><span class="pulse">Platform aktif</span><span class="badge brand">Firebase destekli</span></div>
+          <div class="mini-terminal">
+            <div class="terminal-line"><span>Oyuncu eşleştirme</span><b>%87 uyum</b></div>
+            <div class="terminal-line"><span>Takım başvuruları</span><b>Admin onaylı</b></div>
+            <div class="terminal-line"><span>Turnuva akışı</span><b>Hakem kontrollü</b></div>
+            <div class="terminal-line"><span>Güven sistemi</span><b>Rapor + ban</b></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section compact">
+    <div class="container stats-grid">
+      <article class="stat-card"><span>Oyuncu profili</span><strong data-stat="players">0+</strong><small>Onaylı vitrin</small></article>
+      <article class="stat-card"><span>Takım ilanı</span><strong data-stat="teams">0+</strong><small>Başvuru sistemi</small></article>
+      <article class="stat-card"><span>Turnuva</span><strong data-stat="tournaments">0+</strong><small>Hakem akışı</small></article>
+      <article class="stat-card"><span>Oyun havuzu</span><strong data-stat="games">0+</strong><small>Rank motoru</small></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div><h2>Platform modülleri</h2><p>EsporGO artık tek sayfalık bir tanıtım değil, ayrı modülleri olan gerçek platform mimarisiyle çalışır.</p></div>
+      </div>
+      <div class="grid cards-4">
+        <article class="card"><div class="avatar">🎮</div><h3>Oyuncu Bul</h3><p>Oyun, şehir, rank, rol, mikrofon, platform ve aktiflik saatine göre oyuncu keşfet.</p></article>
+        <article class="card"><div class="avatar">🛡️</div><h3>Takım İlanları</h3><p>Eksik rol, minimum rank, antrenman düzeni ve başvuru şartlarıyla takım oluştur.</p></article>
+        <article class="card"><div class="avatar">🏆</div><h3>Turnuvalar</h3><p>Kayıt, format, ödül, takım limiti, hakem ihtiyacı ve durum yönetimi tek ekranda.</p></article>
+        <article class="card"><div class="avatar">⚖️</div><h3>Hakemlik</h3><p>E-spor hakemi profili, maç tecrübesi, oyun uzmanlığı ve müsaitlik sistemi.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section compact">
+    <div class="container">
+      <div class="section-heading"><div><h2>Popüler oyun havuzu</h2><p>Oyunlar kategori, platform, rol ve rank sistemiyle düzenli tutulur.</p></div><a class="btn ghost" href="players.html">Oyuncuları gör</a></div>
+      <div id="popularGames" class="grid cards-4"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading"><div><h2>Son onaylı oyuncular</h2><p>Admin kontrolünden geçen güvenilir oyuncu profilleri.</p></div><a class="btn ghost" href="players.html">Tümünü gör</a></div>
+      <div id="latestPlayers" class="grid cards-3"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+    </div>
+  </section>
+
+  <section class="section compact">
+    <div class="container grid cards-2">
+      <div>
+        <div class="section-heading"><div><h2>Açık takım ilanları</h2><p>Rol ve rank şartları net ilanlar.</p></div></div>
+        <div id="latestTeams" class="grid"></div>
+      </div>
+      <div>
+        <div class="section-heading"><div><h2>Yaklaşan turnuvalar</h2><p>Kayıt ve hakem yönetimiyle profesyonel akış.</p></div></div>
+        <div id="latestTournaments" class="grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading"><div><h2>Güven ve kalite sistemi</h2><p>Sahte profil, toxic davranış ve düzensiz ilanlara karşı admin kontrollü yapı.</p></div></div>
+      <div class="grid cards-3">
+        <article class="card"><span class="badge success">Onay</span><h3>Admin kontrolü</h3><p>Yeni profil, takım ilanı, turnuva ve hakem başvuruları yayına çıkmadan önce incelenir.</p></article>
+        <article class="card"><span class="badge warn">Güven</span><h3>Güven puanı</h3><p>Onaylı profil, rapor geçmişi, takım davranışı ve turnuva disipliniyle güven algısı oluşturur.</p></article>
+        <article class="card"><span class="badge danger">Moderasyon</span><h3>Rapor / ban akışı</h3><p>Kullanıcılar profili rapor edebilir; admin panelde işlem notu ve karar kaydı tutulur.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section compact">
+    <div class="container faq">
+      <details open><summary>EsporGO’nun farkı ne?</summary><p>Sadece oyuncu bulma değil; takım, turnuva, hakemlik, admin onayı ve güven sistemiyle daha geniş bir e-spor platformudur.</p></details>
+      <details><summary>Admin panel nerede?</summary><p>Admin panel ana sitede görünmez. Sadece admin.html adresinden ve role: admin hesabıyla açılır.</p></details>
+      <details><summary>Firebase tekrar kurulacak mı?</summary><p>Hayır. Mevcut firebase-config.js dosyan korunursa yeni sürümler aynı Firebase projesini kullanır.</p></details>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>EsporGO</strong>
+      <p>Oyuncu, takım, turnuva ve hakemlik akışını tek platformda buluşturur.</p>
+    </div>
+    <div class="badges">
+      <span class="badge">Firebase Auth</span>
+      <span class="badge">Firestore</span>
+      <span class="badge">GitHub Pages</span>
+      <span class="badge success">Admin onaylı</span>
+    </div>
+  </div>
+</footer>
+<div class="toast-region" aria-live="polite"></div>
+<script type="module" src="./app.js"></script>
+</body>
+</html>

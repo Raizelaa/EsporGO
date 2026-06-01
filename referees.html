@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="tr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Hakemler | EsporGO V4</title><link rel="stylesheet" href="./style.css"></head>
+<body data-page="referees">
+<header class="site-header">
+  <div class="container navbar">
+    <a class="logo" href="index.html" aria-label="EsporGO Ana Sayfa">
+      <span class="logo-mark">EG</span>
+      <span>EsporGO <small>Türkiye e-spor platformu</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Ana menü">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="players.html">Oyuncu Bul</a>
+      <a href="teams.html">Takımlar</a>
+      <a href="tournaments.html">Turnuvalar</a>
+      <a href="referees.html">Hakemler</a>
+      <a href="dashboard.html">Panelim</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn ghost" data-auth="out" href="login.html">Giriş</a>
+      <a class="btn primary" data-auth="out" href="login.html#register">Kayıt ol</a>
+      <a class="btn ghost" data-auth="in" href="dashboard.html" style="display:none"><span data-user-name>Oyuncu</span></a>
+      <button class="btn ghost" data-auth="in" id="logoutBtn" style="display:none">Çıkış</button>
+      <button class="btn ghost mobile-toggle" type="button">Menü</button>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="page-title"><div class="container"><span class="eyebrow">⚖️ Hakemlik sistemi</span><h1>Turnuvalara güven katan <span class="gradient-text">hakem profilleri.</span></h1><p class="lead">Uzman oyunlar, müsaitlik durumu, maç tecrübesi, güven puanı ve admin onaylı hakem rozetiyle profesyonel organizasyon yönet.</p></div></section>
+  <section class="section compact"><div class="container filter-panel"><form id="refereeFilters" class="filter-grid"><div class="field"><label>Oyun</label><select name="game" data-games></select></div><div class="field"><label>Şehir</label><select name="city" data-cities></select></div><div class="field"><label>Arama</label><input class="input" name="search" placeholder="Hakem adı, deneyim..." /></div><button class="btn primary" type="submit">Filtrele</button></form></div></section>
+  <section class="section compact"><div class="container grid cards-2"><div><div class="section-heading"><div><h2>Onaylı hakemler</h2><p>Turnuva ve maç yönetimi için uygun hakem profilleri.</p></div></div><div id="refereesGrid" class="grid"><div class="skeleton"></div></div></div><aside class="form-panel"><h2>Hakem başvurusu</h2><p class="lead" style="font-size:15px">Başvurun incelenir, onaylanırsa hakem vitrininde görünür.</p><form id="refereeCreateForm" class="form-grid"><div class="field"><label>Hakem adı</label><input class="input" name="refereeName" required></div><div class="field"><label>Şehir</label><select name="city" data-cities required></select></div><div class="field full"><label>Uzman oyunlar</label><input class="input" name="games" placeholder="Point Blank, Valorant, CS2" required></div><div class="field"><label>Deneyim</label><input class="input" name="experience" placeholder="2 yıl"></div><div class="field"><label>Yönettiğin maç sayısı</label><input class="input" name="matches" type="number" min="0"></div><div class="field"><label>Müsaitlik</label><input class="input" name="availability" placeholder="Akşam / Hafta sonu"></div><div class="field"><label>Seviye</label><select name="level"><option>Hakem</option><option>Senior Hakem</option><option>Baş Hakem</option><option>Yayın Hakemi</option></select></div><div class="field full"><label>Kısa açıklama</label><textarea name="bio" required></textarea></div><button class="btn primary block field full" type="submit">Hakem başvurusu gönder</button></form></aside></div></section>
+</main>
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>EsporGO</strong>
+      <p>Oyuncu, takım, turnuva ve hakemlik akışını tek platformda buluşturur.</p>
+    </div>
+    <div class="badges">
+      <span class="badge">Firebase Auth</span>
+      <span class="badge">Firestore</span>
+      <span class="badge">GitHub Pages</span>
+      <span class="badge success">Admin onaylı</span>
+    </div>
+  </div>
+</footer>
+<div class="toast-region" aria-live="polite"></div>
+<script type="module" src="./app.js"></script>
+</body></html>

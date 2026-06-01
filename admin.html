@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="tr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Gizli Admin Paneli | EsporGO V4</title><link rel="stylesheet" href="./style.css"><meta name="robots" content="noindex,nofollow"></head>
+<body data-page="admin">
+<header class="site-header">
+  <div class="container navbar">
+    <a class="logo" href="index.html" aria-label="EsporGO Ana Sayfa">
+      <span class="logo-mark">EG</span>
+      <span>EsporGO <small>Türkiye e-spor platformu</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Ana menü">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="players.html">Oyuncu Bul</a>
+      <a href="teams.html">Takımlar</a>
+      <a href="tournaments.html">Turnuvalar</a>
+      <a href="referees.html">Hakemler</a>
+      <a href="dashboard.html">Panelim</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn ghost" data-auth="out" href="login.html">Giriş</a>
+      <a class="btn primary" data-auth="out" href="login.html#register">Kayıt ol</a>
+      <a class="btn ghost" data-auth="in" href="dashboard.html" style="display:none"><span data-user-name>Oyuncu</span></a>
+      <button class="btn ghost" data-auth="in" id="logoutBtn" style="display:none">Çıkış</button>
+      <button class="btn ghost mobile-toggle" type="button">Menü</button>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="page-title"><div class="container"><span class="eyebrow">🛡️ Gizli yönetim merkezi</span><h1>EsporGO <span class="gradient-text">Admin Paneli</span></h1><p class="lead">Bu sayfa ana menüde görünmez. Sadece role: admin olan hesaplar başvuru, rapor ve moderasyon işlemlerini yönetir.</p></div></section>
+  <section class="section compact"><div class="container"><div id="adminGate"></div><div id="adminContent" class="admin-layout" style="display:none"><aside class="card sidebar-card"><h3>Yönetim</h3><div class="tabs side-menu"><button class="tab-btn active" data-tab="usersPanel">Oyuncular</button><button class="tab-btn" data-tab="teamsPanel">Takımlar</button><button class="tab-btn" data-tab="tournamentsPanel">Turnuvalar</button><button class="tab-btn" data-tab="refereesPanel">Hakemler</button><button class="tab-btn" data-tab="reportsPanel">Raporlar</button><button class="tab-btn" data-tab="logsPanel">İşlem geçmişi</button></div></aside><section class="admin-panel"><div id="usersPanel" class="tab-panel active"><h2>Bekleyen oyuncu profilleri</h2><div id="pendingUsers" class="grid"></div></div><div id="teamsPanel" class="tab-panel"><h2>Bekleyen takım ilanları</h2><div id="pendingTeams" class="grid"></div></div><div id="tournamentsPanel" class="tab-panel"><h2>Bekleyen turnuva talepleri</h2><div id="pendingTournaments" class="grid"></div></div><div id="refereesPanel" class="tab-panel"><h2>Bekleyen hakem başvuruları</h2><div id="pendingReferees" class="grid"></div></div><div id="reportsPanel" class="tab-panel"><h2>Açık raporlar</h2><div id="openReports" class="grid"></div></div><div id="logsPanel" class="tab-panel"><h2>Admin işlem geçmişi</h2><div id="adminLogs" class="grid"></div></div></section></div></div></section>
+</main>
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>EsporGO</strong>
+      <p>Oyuncu, takım, turnuva ve hakemlik akışını tek platformda buluşturur.</p>
+    </div>
+    <div class="badges">
+      <span class="badge">Firebase Auth</span>
+      <span class="badge">Firestore</span>
+      <span class="badge">GitHub Pages</span>
+      <span class="badge success">Admin onaylı</span>
+    </div>
+  </div>
+</footer>
+<div class="toast-region" aria-live="polite"></div>
+<script type="module" src="./app.js"></script>
+</body></html>

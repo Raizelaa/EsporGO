@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="tr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Takım İlanları | EsporGO V4</title><link rel="stylesheet" href="./style.css"></head>
+<body data-page="teams">
+<header class="site-header">
+  <div class="container navbar">
+    <a class="logo" href="index.html" aria-label="EsporGO Ana Sayfa">
+      <span class="logo-mark">EG</span>
+      <span>EsporGO <small>Türkiye e-spor platformu</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Ana menü">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="players.html">Oyuncu Bul</a>
+      <a href="teams.html">Takımlar</a>
+      <a href="tournaments.html">Turnuvalar</a>
+      <a href="referees.html">Hakemler</a>
+      <a href="dashboard.html">Panelim</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn ghost" data-auth="out" href="login.html">Giriş</a>
+      <a class="btn primary" data-auth="out" href="login.html#register">Kayıt ol</a>
+      <a class="btn ghost" data-auth="in" href="dashboard.html" style="display:none"><span data-user-name>Oyuncu</span></a>
+      <button class="btn ghost" data-auth="in" id="logoutBtn" style="display:none">Çıkış</button>
+      <button class="btn ghost mobile-toggle" type="button">Menü</button>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="page-title"><div class="container"><span class="eyebrow">🛡️ Takım merkezi</span><h1>Eksik rolünü duyur, <span class="gradient-text">kadronu tamamla.</span></h1><p class="lead">Takım adı, oyun, minimum rank, eksik roller, mikrofon şartı ve antrenman günleriyle ciddi takım ilanları oluştur.</p></div></section>
+  <section class="section compact"><div class="container filter-panel"><form id="teamFilters" class="filter-grid"><div class="field"><label>Oyun</label><select name="game" data-games></select></div><div class="field"><label>Şehir</label><select name="city" data-cities></select></div><div class="field"><label>Kategori</label><select name="category" data-categories></select></div><div class="field"><label>Mikrofon</label><select name="mic"><option value="">Fark etmez</option><option value="true">Zorunlu</option></select></div><div class="field"><label>Arama</label><input class="input" name="search" placeholder="Takım, rol, rank..." /></div><button class="btn primary" type="submit">Filtrele</button><button class="btn ghost" type="button" id="clearTeamFilters">Temizle</button></form></div></section>
+  <section class="section compact"><div class="container grid cards-2"><div><div class="section-heading"><div><h2>Açık ilanlar</h2><p>Admin tarafından onaylanmış takım ilanları.</p></div></div><div id="teamsGrid" class="grid"><div class="skeleton"></div></div></div><aside class="form-panel"><h2>Takım ilanı oluştur</h2><p class="lead" style="font-size:15px">İlanın admin onayından sonra yayına çıkar.</p><form id="teamCreateForm" class="form-grid"><div class="field"><label>Takım adı</label><input class="input" name="teamName" required></div><div class="field"><label>Şehir</label><select name="city" data-cities required></select></div><div class="field"><label>Oyun</label><select name="game" id="teamGame" data-games required></select></div><div class="field"><label>Minimum rank</label><select name="minRank" id="teamMinRank" required></select></div><div class="field full"><label>Eksik roller</label><input class="input" name="neededRoles" placeholder="Sniper, Support, IGL" required></div><div class="field"><label>Antrenman günleri</label><input class="input" name="trainingDays" placeholder="Salı / Perşembe / Pazar"></div><label class="check-pill"><input type="checkbox" name="micRequired"> Mikrofon zorunlu</label><div class="field full"><label>Açıklama</label><textarea name="description" required></textarea></div><button class="btn primary block field full" type="submit">Onaya gönder</button></form></aside></div></section>
+</main>
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>EsporGO</strong>
+      <p>Oyuncu, takım, turnuva ve hakemlik akışını tek platformda buluşturur.</p>
+    </div>
+    <div class="badges">
+      <span class="badge">Firebase Auth</span>
+      <span class="badge">Firestore</span>
+      <span class="badge">GitHub Pages</span>
+      <span class="badge success">Admin onaylı</span>
+    </div>
+  </div>
+</footer>
+<div class="toast-region" aria-live="polite"></div>
+<script type="module" src="./app.js"></script>
+</body></html>

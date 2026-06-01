@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="tr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Oyuncu Bul | EsporGO V4</title><link rel="stylesheet" href="./style.css"></head>
+<body data-page="players">
+<header class="site-header">
+  <div class="container navbar">
+    <a class="logo" href="index.html" aria-label="EsporGO Ana Sayfa">
+      <span class="logo-mark">EG</span>
+      <span>EsporGO <small>Türkiye e-spor platformu</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Ana menü">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="players.html">Oyuncu Bul</a>
+      <a href="teams.html">Takımlar</a>
+      <a href="tournaments.html">Turnuvalar</a>
+      <a href="referees.html">Hakemler</a>
+      <a href="dashboard.html">Panelim</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn ghost" data-auth="out" href="login.html">Giriş</a>
+      <a class="btn primary" data-auth="out" href="login.html#register">Kayıt ol</a>
+      <a class="btn ghost" data-auth="in" href="dashboard.html" style="display:none"><span data-user-name>Oyuncu</span></a>
+      <button class="btn ghost" data-auth="in" id="logoutBtn" style="display:none">Çıkış</button>
+      <button class="btn ghost mobile-toggle" type="button">Menü</button>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="page-title"><div class="container"><span class="eyebrow">🎮 Oyuncu keşif motoru</span><h1>Rank, şehir ve role göre <span class="gradient-text">takım arkadaşını bul.</span></h1><p class="lead">Oyuncuları oyun, şehir, platform, mikrofon, rank ve arama durumuna göre filtrele. Uyum skoru, güven puanı ve admin onay rozetiyle karar ver.</p></div></section>
+  <section class="section compact"><div class="container filter-panel">
+    <form id="playerFilters" class="filter-grid">
+      <div class="field"><label>Oyun</label><select name="game" data-games></select></div>
+      <div class="field"><label>Şehir</label><select name="city" data-cities></select></div>
+      <div class="field"><label>Kategori</label><select name="category" data-categories></select></div>
+      <div class="field"><label>Platform</label><select name="platform" data-platforms></select></div>
+      <div class="field"><label>Arama</label><input class="input" name="search" placeholder="Oyuncu, rank, rol..." /></div>
+      <div class="field"><label>Mikrofon</label><select name="mic"><option value="">Fark etmez</option><option value="true">Mikrofon var</option></select></div>
+      <button class="btn primary" type="submit">Filtrele</button><button class="btn ghost" type="button" id="clearPlayerFilters">Temizle</button>
+    </form>
+  </div></section>
+  <section class="section compact"><div class="container"><div class="section-heading"><div><h2>Onaylı oyuncular</h2><p id="resultCount">Oyuncular yükleniyor...</p></div><a class="btn primary" href="login.html#register">Profil oluştur</a></div><div id="playersGrid" class="grid cards-3"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div></div></section>
+</main>
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>EsporGO</strong>
+      <p>Oyuncu, takım, turnuva ve hakemlik akışını tek platformda buluşturur.</p>
+    </div>
+    <div class="badges">
+      <span class="badge">Firebase Auth</span>
+      <span class="badge">Firestore</span>
+      <span class="badge">GitHub Pages</span>
+      <span class="badge success">Admin onaylı</span>
+    </div>
+  </div>
+</footer>
+<div class="toast-region" aria-live="polite"></div>
+<script type="module" src="./app.js"></script>
+</body></html>
